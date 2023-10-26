@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace GD.Selection
 {
@@ -13,6 +14,11 @@ namespace GD.Selection
         private Material onSelectMaterial;
         [SerializeField]
         private Material onPickupMaterial;
+        
+        [SerializeField]
+        private AudioClip pickupAudioClip;
+        [SerializeField]
+        private AudioClip setDownAudioClip;
         
         private Vector3 relativePosition = Vector3.zero;
         private Material originalMaterial;
@@ -46,6 +52,8 @@ namespace GD.Selection
                     body.isKinematic = false;
                     if (renderer is not null)
                         renderer.material = onPickupMaterial;
+                    
+                    AudioSource.PlayClipAtPoint(pickupAudioClip, transform.position);
                 }
                 else
                 {
@@ -53,6 +61,8 @@ namespace GD.Selection
                     body.isKinematic = true;
                     if (renderer is not null)
                         renderer.material = onSelectMaterial;
+                    
+                    AudioSource.PlayClipAtPoint(setDownAudioClip, transform.position);
                 }
                 relativePosition = transform.position - playerObject.transform.position;
             }
@@ -86,8 +96,12 @@ namespace GD.Selection
         {
             if (transform.TryGetComponent(out Rigidbody body))
             {
-                //sets the rigidbody of the selected object to kinematic, which disables gravity and blocks any movement on it.
-                body.isKinematic = true;
+                if (!body.isKinematic)
+                {
+                    //sets the rigidbody of the selected object to kinematic, which disables gravity and blocks any movement on it.
+                    body.isKinematic = true;
+                    AudioSource.PlayClipAtPoint(setDownAudioClip, transform.position);
+                }
                 
                 //change back to original Material
                 Renderer renderer = transform.GetComponent<Renderer>();
