@@ -40,6 +40,7 @@ public class PauseMenu : MonoBehaviour
 
     public void GoMainMenu()
     {
-        // Code to go to main menu
+        Time.timeScale = 1.0f;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Main Menu");
     }
 }
