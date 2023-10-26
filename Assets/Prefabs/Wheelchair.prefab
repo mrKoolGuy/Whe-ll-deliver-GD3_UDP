@@ -150,9 +150,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7230004498888904527}
   serializedVersion: 4
-  m_Mass: 80
+  m_Mass: 8
   m_Drag: 0
-  m_AngularDrag: 25
+  m_AngularDrag: 4
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -181,10 +181,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85d0d39f7c2525050a95aa3cdbd81923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationTorque: 2800
-  movementForce: 2500
+  rotationTorque: 3.5
+  movementForce: 90
   maxSpeed: 5.5
-  sidewaysFriction: 1000
+  sidewaysFriction: 100
   breakingForce: 100
 --- !u!1001 &7199201387627286341
 PrefabInstance:
