@@ -79,6 +79,8 @@ GameObject:
   - component: {fileID: 6422677394345645282}
   - component: {fileID: 8912511358233784086}
   - component: {fileID: 8000497665906244353}
+  - component: {fileID: 6553253884994386126}
+  - component: {fileID: 7464110803995778209}
   m_Layer: 0
   m_Name: CapsulePlayer
   m_TagString: Untagged
@@ -232,6 +234,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6737930479e156279a1524d76517aa17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!81 &6553253884994386126
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7230004498888904527}
+  m_Enabled: 1
+--- !u!114 &7464110803995778209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7230004498888904527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97e5a38ca739d0b2e908bb7676eb33c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  birdsFlapping: {fileID: 8300000, guid: 1157bb51c3e28966799614fbc89949dc, type: 3}
 --- !u!1001 &6875141702021279451
 PrefabInstance:
   m_ObjectHideFlags: 0
