@@ -1,3 +1,5 @@
+using System;
+using Unity.Collections;
 using UnityEngine;
 
 public class KeyboardControls : MonoBehaviour
@@ -12,12 +14,15 @@ public class KeyboardControls : MonoBehaviour
     private float sidewaysFriction;
     [SerializeField]
     private float breakingForce;
+    
 
     private Rigidbody rbody;
     
     //original transform used to reset the player when he falls of the platform
     private Vector3 origPosition;
     private Quaternion origRotation;
+
+
 
     private void Start()
     {
@@ -64,16 +69,19 @@ public class KeyboardControls : MonoBehaviour
             rbody.AddForce(transform.TransformDirection(breakingForce * forwardSpeed * Vector3.back));
     }
 
+
+
     private void FixedUpdate()
     {
         // get vertical user input and apply a force to create back and forth movement
         rbody.AddForce(rbody.transform.forward * (Input.GetAxis("Vertical") * movementForce));
+        
         // get horizontal user input and apply a force to rotate the player
-        //rbody.AddTorque(Vector3.up * (Input.GetAxis("Horizontal") * rotationTorque));
-        transform.Rotate(Vector3.up * (Input.GetAxis("Horizontal") * rotationTorque));
+        rbody.angularVelocity = Vector3.up * (Input.GetAxis("Horizontal") * rotationTorque);
 
         ApplyBreakingAndSidewaysFriction();
         LimitMaxSpeed();
         ResetFallenPlayer();
+        
     }
 }
