@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace GD.Selection
 {
@@ -20,36 +19,53 @@ namespace GD.Selection
         [SerializeField]
         private AudioClip setDownAudioClip;
         
-        private Vector3 relativePosition = Vector3.zero;
+        //This is pointing from the player to the point where the pushable object is attached to the player
+        private Vector3 relativePushablePosition = Vector3.zero;
         private Material originalMaterial;
+        private float originalMass;
+
+        //this is used to make the pushable object light so the player is able to move it
+        private float featherWeight = 0.1f;
+
+        //True whenever the player grabs something, which means the grabbed object can be pushed or pulled
+        private bool grabbing = false;
+        
         public void OnSelect(Transform transform)
         {
             //Save original material and apply the onSelectMaterial
             Renderer renderer = transform.GetComponent<Renderer>();
             if (renderer is not null)
             {
+                Rigidbody pushableBody = transform.GetComponent<Rigidbody>();
                 originalMaterial = transform.GetComponent<Renderer>()?.material;
+                originalMass = pushableBody.mass;
                 renderer.material = onSelectMaterial;
             }
         }
 
         public void WhileSelected(Transform transform)
         {
-            Rigidbody body = transform.GetComponent<Rigidbody>();
+            Rigidbody pushableBody = transform.GetComponent<Rigidbody>();
             
             //Gets the underlying physics representation of the player (the capsule)
             //TODO: do it more modular, but setting a SerializeField for a property doesn't work
             //      because this is a scriptable object, which can not contain reverences to in game objects 
-            GameObject playerObject = GameObject.Find("Capsule");
+            GameObject playerObject = GameObject.Find("CapsulePlayer");
+            Rigidbody playerBody = playerObject.GetComponent<Rigidbody>();
             
-            //pressing the configured drag button toggles if a object is draggable and pushable
-            if (Input.GetButtonDown("Drag"))
+            //pressing the configured grab button toggles if a object is grabbable and pushable
+            if (Input.GetButtonDown("Grab"))
             {
                 Renderer renderer = transform.GetComponent<Renderer>();
-                if (body.isKinematic)
+                if (!grabbing)
                 {
-                    //sets the selected object to a normal rigidbody which applies gravity, and allows it to be pushed around
-                    body.isKinematic = false;
+                    //reduces the mass of the rigidbody, and allows it to be pushed around
+                    grabbing = true;
+                    pushableBody.mass = featherWeight;
+                    //Allows movement in x and z of the pushable object by unfreezing
+                    //this works through clearing the bits for freezing x and z position, it is not affecting any other bits
+                    pushableBody.constraints &= ~(RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ);
+
                     if (renderer is not null)
                         renderer.material = onPickupMaterial;
                     
@@ -57,38 +73,30 @@ namespace GD.Selection
                 }
                 else
                 {
-                    //sets the rigidbody of the selected object to kinematic, which disables gravity and blocks any movement on it.
-                    body.isKinematic = true;
+                    //restores the original mass and constraints, which blocks any movement from the player on it.
+                    grabbing = false;
+                    pushableBody.mass = originalMass;
+                    pushableBody.constraints |= RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
                     if (renderer is not null)
                         renderer.material = onSelectMaterial;
                     
                     AudioSource.PlayClipAtPoint(setDownAudioClip, transform.position);
                 }
-                relativePosition = transform.position - playerObject.transform.position;
+                relativePushablePosition = pushableBody.position - playerBody.transform.position;
             }
-
+            
             //makes the selected object follow the players position
-            //TODO: somehow prevent pushable objects from being able to be pushed into walls
-            Rigidbody playerBody = playerObject.GetComponent<Rigidbody>();
-            if (!body.isKinematic)
+            if (grabbing)
             {
-                //gets the player velocity in the direction the player faces.
-                Vector3 playerVelocity = playerObject.transform.InverseTransformDirection(playerBody.velocity); 
-                if (playerVelocity.z > 0)//control ramp by velocity
-                {
-                    //If the player is moving forward, the selected object mimic the velocity of the player.
-                    //The position approach from below makes it too easy for the player to bug objects into walls
-                    //TODO: some bugging into walls is still present, prevent it somehow
-                    body.velocity = playerBody.velocity;
-                }
-                else //control ramp by position
-                {
-                    //If the player is moving backward, mimicking the the velocity doesn't work because of the acceleration in the player.
-                    //Instead the position change is mirrored between the player and the selected object.
-                    //The y position of the selected object is unchanged, so it follows the terrain.
-                    Vector3 newPosition = playerObject.transform.position + relativePosition;
-                    transform.position = new Vector3(newPosition.x, transform.position.y, newPosition.z);
-                }
+                //The position change should be mirrored between the player and the selected object.
+                //To avoid bugging through objects we don't set the desired position, but instead calculate a velocity to bring the ramp there.
+                //This enables the physics system to stop the pushable object on collisions.
+                Vector3 optimalPushablePosition = playerBody.position + relativePushablePosition;
+                //this calculates the velocity needed to get to the optimalPushablePosition
+                //even so this is called indirectly in an update function, we have to use fixedDeltaTime, because physics is only updated in the fixed intervals 
+                Vector3 pushableVelocity = (optimalPushablePosition - pushableBody.position) / Time.fixedDeltaTime;
+                //The y velocity of the selected object is unchanged, so it follows the terrain.
+                pushableBody.velocity = new Vector3(pushableVelocity.x, pushableBody.velocity.y, pushableVelocity.z);
             }
         }
 
@@ -96,16 +104,19 @@ namespace GD.Selection
         {
             if (transform.TryGetComponent(out Rigidbody body))
             {
-                if (!body.isKinematic)
+                if (grabbing)
                 {
-                    //sets the rigidbody of the selected object to kinematic, which disables gravity and blocks any movement on it.
-                    body.isKinematic = true;
+                    grabbing = false;
+                    //restores the original mass in the pushable object
+                    body.mass = originalMass;
+                    //This freezes position in x and z but still allows the pushable object to fall down through gravity
+                    body.constraints |= RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+                    
                     AudioSource.PlayClipAtPoint(setDownAudioClip, transform.position);
                 }
                 
                 //change back to original Material
-                Renderer renderer = transform.GetComponent<Renderer>();
-                if (renderer is not null)
+                if (transform.TryGetComponent<Renderer>(out var renderer))
                     renderer.material = originalMaterial;
             }
         }

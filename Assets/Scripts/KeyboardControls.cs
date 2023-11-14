@@ -1,5 +1,3 @@
-using System;
-using Unity.Collections;
 using UnityEngine;
 
 public class KeyboardControls : MonoBehaviour
@@ -14,21 +12,12 @@ public class KeyboardControls : MonoBehaviour
     private float sidewaysFriction;
     [SerializeField]
     private float breakingForce;
-    
 
     private Rigidbody rbody;
-    
-    //original transform used to reset the player when he falls of the platform
-    private Vector3 origPosition;
-    private Quaternion origRotation;
-
-
 
     private void Start()
     {
         rbody = GetComponent<Rigidbody>();
-        origPosition = transform.position;
-        origRotation = transform.rotation;
     }
 
     // limit the maximum reachable speed of the player
@@ -40,17 +29,6 @@ public class KeyboardControls : MonoBehaviour
 
         xzSpeed = Vector3.ClampMagnitude(xzSpeed, maxSpeed);
         rbody.velocity = new Vector3(xzSpeed.x, rbody.velocity.y, xzSpeed.z);
-    }
-    
-    //if the player falls below the platform, reset the position
-    private void ResetFallenPlayer()
-    {
-        if (rbody.transform.position.y < -10)
-        {
-            transform.position = origPosition;
-            transform.rotation = origRotation;
-            rbody.velocity = Vector3.zero;
-        }
     }
 
     //This simulates the sideways friction on the wheels off the wheelchair, and applies brakes to the wheels when the player is not controlling the speed
@@ -69,19 +47,14 @@ public class KeyboardControls : MonoBehaviour
             rbody.AddForce(transform.TransformDirection(breakingForce * forwardSpeed * Vector3.back));
     }
 
-
-
     private void FixedUpdate()
     {
         // get vertical user input and apply a force to create back and forth movement
         rbody.AddForce(rbody.transform.forward * (Input.GetAxis("Vertical") * movementForce));
-        
         // get horizontal user input and apply a force to rotate the player
         rbody.angularVelocity = Vector3.up * (Input.GetAxis("Horizontal") * rotationTorque);
 
         ApplyBreakingAndSidewaysFriction();
         LimitMaxSpeed();
-        ResetFallenPlayer();
-        
     }
 }
