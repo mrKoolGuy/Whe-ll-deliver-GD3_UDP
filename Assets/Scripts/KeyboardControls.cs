@@ -52,10 +52,8 @@ public class KeyboardControls : MonoBehaviour
         // get vertical user input and apply a force to create back and forth movement
         rbody.AddForce(rbody.transform.forward * (Input.GetAxis("Vertical") * movementForce));
         // get horizontal user input and apply a force to rotate the player
-        //rbody.AddTorque(Vector3.up * (Input.GetAxis("Horizontal") * rotationTorque));
-        transform.Rotate(Vector3.up * (Input.GetAxis("Horizontal") * rotationTorque));
-        
-        
+        rbody.angularVelocity = Vector3.up * (Input.GetAxis("Horizontal") * rotationTorque);
+
         ApplyBreakingAndSidewaysFriction();
         LimitMaxSpeed();
     }
