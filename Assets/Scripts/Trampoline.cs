@@ -5,17 +5,17 @@ using UnityEngine;
 
 public class Trampoline : MonoBehaviour
 {
+    public Vector3 jump = new Vector3(0.0f, 1.0f, 0.0f);
+    public float jumpForce = 70.0f;
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("collinding with somthing");
         if (other.CompareTag("Player"))
         {
-            Debug.Log("collinding with player");
-
-            Rigidbody rbody = other.attachedRigidbody;
-            rbody.AddForce(rbody.transform.up * 100);
-
+            Rigidbody rb = other.attachedRigidbody;
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            rb.AddForce(jump * jumpForce, ForceMode.Impulse);
         }
     }
 
