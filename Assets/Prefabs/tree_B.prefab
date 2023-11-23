@@ -139,9 +139,10 @@ GameObject:
   - component: {fileID: 5032897037530792714}
   - component: {fileID: 7858603696660265536}
   - component: {fileID: 6641371624113348308}
+  - component: {fileID: 259896879517981960}
   m_Layer: 0
   m_Name: default
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -211,6 +212,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &259896879517981960
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4282463988349767729}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5873733
+  m_Height: 3.0284061
+  m_Direction: 1
+  m_Center: {x: -0.27827805, y: 1.0142031, z: 4.0185615e-16}
 --- !u!1 &5108090979561171176
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,7 +244,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5595798412028981842}
-  - component: {fileID: 6546087911041200806}
   m_Layer: 0
   m_Name: tree_B
   m_TagString: Untagged
@@ -245,26 +268,3 @@ Transform:
   - {fileID: 1871412617599554111}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!136 &6546087911041200806
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5108090979561171176}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5873733
-  m_Height: 3.0284061
-  m_Direction: 1
-  m_Center: {x: -0.27827805, y: 1.0142031, z: 4.0185615e-16}
