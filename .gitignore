@@ -27,7 +27,7 @@
 /[Aa]ssets/Plugins/Editor/JetBrains*
 #Odin Plugin
 [Aa]ssets/Plugins/Sirenix/
-[Aa]ssets/Plugin.meta
+[Aa]ssets/Plugins.meta
 [Aa]ssets/Plugins/Sirenix.meta
 
 # Visual Studio cache directory
