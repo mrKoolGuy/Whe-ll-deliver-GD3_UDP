@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onSelectMaterial: {fileID: 2100000, guid: bbe4e8730c876c2658f062f8e638b93c, type: 2}
   onPickupMaterial: {fileID: 2100000, guid: 91eaa2d70f67051fb8d3c35d3fe52caa, type: 2}
-  onSelectColor: {r: 1, g: 0.8313726, b: 0.20392159, a: 1}
-  onPickupColor: {r: 0.16470589, g: 0.6745098, b: 1, a: 1}
+  onSelectColor: {r: 1, g: 0.8313726, b: 0.20392159, a: 0.5019608}
+  onPickupColor: {r: 0.16470589, g: 0.6745098, b: 1, a: 0.5019608}
   OutlineWidth: 1
   OutlineDistanceMultipy: 0.4
-  OutlineMode: 3
+  OutlineMode: 4
   pickupAudioClip: {fileID: 8300000, guid: 5df1ef81f02544a34b3335c59fd0b380, type: 3}
   setDownAudioClip: {fileID: 8300000, guid: bcd8f85b7dfc0fbd0803a19779256441, type: 3}
