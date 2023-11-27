@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30c57025708a99a48838f93088ddcd3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jump: {x: 0, y: 1, z: 0}
+  jumpDirection: {x: 0, y: 1, z: 0}
   jumpForce: 70
 --- !u!64 &4306412897753026235
 MeshCollider:
@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 2100902608042019661}
   - component: {fileID: 3604375402059751725}
   - component: {fileID: 3752113893164426500}
+  - component: {fileID: 9077682563805470281}
   m_Layer: 0
   m_Name: Trampoline
   m_TagString: Selectable
@@ -1322,3 +1323,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 3
+--- !u!114 &9077682563805470281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5815327397785101025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6737930479e156279a1524d76517aa17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

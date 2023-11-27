@@ -1,30 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class LevelFinishReached : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public UnityEvent OnLevelEnd;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("level ended");
+            //Tell Level Manager to go to next level
+
+            OnLevelEnd?.Invoke();
+
+
+            // Do somthing here when level finishes
+
+            int thisLevel = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(thisLevel + 1);
+
+
+            Debug.Log("Going to level : " + (thisLevel + 1));
         }
+
     }
-
-  
-
-
 }

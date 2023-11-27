@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Selectable
+  - BirdSpot
+  - Tree
+  - GroundTrigger
   layers:
   - Default
   - TransparentFX
