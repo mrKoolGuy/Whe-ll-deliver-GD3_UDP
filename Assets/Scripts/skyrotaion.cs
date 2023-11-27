@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class skysartrotaion : MonoBehaviour
+public class skyrotaion : MonoBehaviour
 {
     [SerializeField]
     float secondforfullrotation =10.0f;
