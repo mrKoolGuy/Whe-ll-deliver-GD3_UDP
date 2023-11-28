@@ -388,6 +388,7 @@ GameObject:
   - component: {fileID: 7464110803995778209}
   - component: {fileID: 7141186920343473040}
   - component: {fileID: 5140380552920738614}
+  - component: {fileID: 2204376500829678680}
   m_Layer: 0
   m_Name: CapsulePlayer
   m_TagString: Player
@@ -593,6 +594,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onPlayerFallen: {fileID: 11400000, guid: d0118e3b132a8e395bf9aa17106ac6e5, type: 2}
   fallDamageHeightThreshold: 0.8
+--- !u!114 &2204376500829678680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7230004498888904527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 4
+  outlineColor: {r: 0.4392157, g: 0.9411765, b: 1, a: 0.5019608}
+  outlineWidth: -0.5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+  OutlineDistanceMultipy: 0.1
 --- !u!1 &8164078558771037576
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,7 +817,7 @@ MonoBehaviour:
   selectableTag: Selectable
   layerMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 4294967295
   radius: 0.3
   maxDistance: 1
   secondSphereOffset: {x: 0, y: 0.5, z: 0}
