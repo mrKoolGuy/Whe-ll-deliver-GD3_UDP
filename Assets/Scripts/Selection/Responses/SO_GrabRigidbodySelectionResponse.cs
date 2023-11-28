@@ -156,9 +156,10 @@ namespace GD.Selection
                     renderer.material = originalMaterial;
 
                 if (transform.TryGetComponent<Outline>(out var outline))
+                {
                     outline.OutlineColor = Vector4.zero;
                     outline.enabled = false;
-                
+                }
             }
         }
     }
