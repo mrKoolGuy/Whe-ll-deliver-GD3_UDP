@@ -1366,6 +1366,7 @@ GameObject:
   - component: {fileID: 973341855}
   - component: {fileID: 973341854}
   - component: {fileID: 973341857}
+  - component: {fileID: 973341858}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -1440,7 +1441,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 973341852}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 2
   m_Camera: {fileID: 963194227}
@@ -1468,7 +1469,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4886b352bbe9fab408dff175f23d068c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainCam: {fileID: 963194227}
+  ui_InteractPrompt: {fileID: 973341856}
+--- !u!114 &973341858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973341852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19898f411b47add9586d9ee6a1a55f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: 
+  Event: {fileID: 11400000, guid: 1e3a78c4da8cd674eb67dd79d2b92cfe, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 973341857}
+        m_TargetAssemblyTypeName: InteractionPrompt_Script, Assembly-CSharp
+        m_MethodName: Disable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1086504656
 GameObject:
   m_ObjectHideFlags: 0
@@ -3445,6 +3475,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wheelchair
       objectReference: {fileID: 0}
+    - target: {fileID: 4958775689237271618, guid: 326066ed887294aa59f4dc4909c93bd9, type: 3}
+      propertyPath: selectionResponses.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958775689237271618, guid: 326066ed887294aa59f4dc4909c93bd9, type: 3}
+      propertyPath: selectionResponses.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 954ec681045bb3e4da138d623b37925c, type: 2}
     - target: {fileID: 5106633045745844842, guid: 326066ed887294aa59f4dc4909c93bd9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.201

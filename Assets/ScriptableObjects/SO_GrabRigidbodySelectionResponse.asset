@@ -21,3 +21,4 @@ MonoBehaviour:
   OutlineMode: 4
   pickupAudioClip: {fileID: 8300000, guid: 5df1ef81f02544a34b3335c59fd0b380, type: 3}
   setDownAudioClip: {fileID: 8300000, guid: bcd8f85b7dfc0fbd0803a19779256441, type: 3}
+  onGrabbed: {fileID: 11400000, guid: 1e3a78c4da8cd674eb67dd79d2b92cfe, type: 2}
