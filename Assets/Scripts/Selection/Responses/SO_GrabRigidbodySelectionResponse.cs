@@ -1,5 +1,7 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace GD.Selection
 {
@@ -9,11 +11,28 @@ namespace GD.Selection
     [Serializable]
     public class SO_GrabRigidbodySelectionResponse : ScriptableObject, ISelectionResponse
     {
+        // Old meterial
         [SerializeField]
         private Material onSelectMaterial;
+        
         [SerializeField]
         private Material onPickupMaterial;
+
+        //Outline Setup
+        [SerializeField]
+        private Color onSelectColor = Color.yellow;
+
+        [SerializeField]
+        private Color onPickupColor = Color.blue;
+
+        [SerializeField]
+        private float OutlineWidth = 10;
+        [SerializeField]
+        private float OutlineDistanceMultipy = 10;
         
+        [SerializeField]
+        Outline.Mode OutlineMode = Outline.Mode.OutlineAll;
+
         [SerializeField]
         private AudioClip pickupAudioClip;
         [SerializeField]
@@ -41,6 +60,20 @@ namespace GD.Selection
                 originalMass = pushableBody.mass;
                 renderer.material = onSelectMaterial;
             }
+            Outline outline = transform.GetComponent<Outline>();
+            if (outline is null)
+            {
+                outline = transform.AddComponent<Outline>();
+                
+            }
+            if(outline is not null)
+            {
+                outline.OutlineColor = onSelectColor;
+                outline.OutlineWidth = OutlineWidth;
+                outline.OutlineMode = OutlineMode;
+                outline.OutlineDistanceMultipy = OutlineDistanceMultipy;
+                outline.enabled = true;
+            }
         }
 
         public void WhileSelected(Transform transform)
@@ -52,7 +85,7 @@ namespace GD.Selection
             //      because this is a scriptable object, which can not contain reverences to in game objects 
             GameObject playerObject = GameObject.Find("CapsulePlayer");
             Rigidbody playerBody = playerObject.GetComponent<Rigidbody>();
-            
+            Outline outline = transform.GetComponent<Outline>();
             //pressing the configured grab button toggles if a object is grabbable and pushable
             if (Input.GetButtonDown("Grab"))
             {
@@ -68,7 +101,8 @@ namespace GD.Selection
 
                     if (renderer is not null)
                         renderer.material = onPickupMaterial;
-                    
+                    if(outline is not null)
+                        outline.OutlineColor = onPickupColor;
                     AudioSource.PlayClipAtPoint(pickupAudioClip, transform.position);
                 }
                 else
@@ -79,7 +113,8 @@ namespace GD.Selection
                     pushableBody.constraints |= RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
                     if (renderer is not null)
                         renderer.material = onSelectMaterial;
-                    
+                    if (outline is not null)
+                        outline.OutlineColor = onSelectColor;
                     AudioSource.PlayClipAtPoint(setDownAudioClip, transform.position);
                 }
                 relativePushablePosition = pushableBody.position - playerBody.transform.position;
@@ -102,6 +137,7 @@ namespace GD.Selection
 
         public void OnDeselect(Transform transform)
         {
+            
             if (transform.TryGetComponent(out Rigidbody body))
             {
                 if (grabbing)
@@ -118,6 +154,12 @@ namespace GD.Selection
                 //change back to original Material
                 if (transform.TryGetComponent<Renderer>(out var renderer))
                     renderer.material = originalMaterial;
+
+                if (transform.TryGetComponent<Outline>(out var outline))
+                {
+                    outline.OutlineColor = Vector4.zero;
+                    outline.enabled = false;
+                }
             }
         }
     }

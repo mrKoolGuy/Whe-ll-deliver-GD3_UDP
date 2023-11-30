@@ -17,12 +17,13 @@ public class Trampoline : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("GroundTrigger"))
         {
             Rigidbody rb = other.attachedRigidbody;
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-            rb.AddForce(jumpDirection * jumpForce, ForceMode.Impulse);
+            Rigidbody rb1 = other.GetComponentInParent<Rigidbody>();
+            rb1.velocity = Vector3.zero;
+            rb1.angularVelocity = Vector3.zero;
+            rb1.AddForce(jumpDirection * jumpForce, ForceMode.Impulse);
         }
     }
 
