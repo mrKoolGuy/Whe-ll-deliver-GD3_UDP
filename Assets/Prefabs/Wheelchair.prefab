@@ -817,7 +817,7 @@ MonoBehaviour:
   selectableTag: Selectable
   layerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
   radius: 0.3
   maxDistance: 1
   secondSphereOffset: {x: 0, y: 0.5, z: 0}

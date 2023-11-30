@@ -21,14 +21,12 @@ public class HUD_Script : MonoBehaviour
     public void ScoreChanged(int newScore)
     {
         ChangeFill(newScore);
-        DebugScoreChanged(newScore);
     }
 
     private void ChangeFill(int current)
     {
         float fillAmount = current / max;
         slider.value = fillAmount;
-        DebugFillAmountChanged(slider.value);
     }
     #endregion
 
