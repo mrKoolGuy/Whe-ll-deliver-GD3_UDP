@@ -21,6 +21,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d3e0964ef8c293548aa635a0efd283fd, type: 2}
   IsLevelLoaded: 0
   CurrentLevel: 0
-  MainMenu: {fileID: 0}
-  PauseMenu: {fileID: 0}
+  MainMenu: {fileID: 11400000, guid: b224497eee83dda4bb26cf19dc5b5bb7, type: 2}
+  PauseMenu: {fileID: 11400000, guid: d0f7cf5d727967942952cc1eb2f10f9a, type: 2}
   UIMenu: {fileID: 0}
