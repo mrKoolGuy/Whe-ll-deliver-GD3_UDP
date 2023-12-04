@@ -37,6 +37,9 @@ namespace GD.Selection
         private AudioClip pickupAudioClip;
         [SerializeField]
         private AudioClip setDownAudioClip;
+
+        //Empty Game Event to handle OnPlayerGrabbed
+        [SerializeField] EmptyGameEvent onGrabbed;
         
         //This is pointing from the player to the point where the pushable object is attached to the player
         private Vector3 relativePushablePosition = Vector3.zero;
@@ -94,6 +97,8 @@ namespace GD.Selection
                 {
                     //reduces the mass of the rigidbody, and allows it to be pushed around
                     grabbing = true;
+                    if(onGrabbed)
+                        onGrabbed.Raise(new Empty());
                     pushableBody.mass = featherWeight;
                     //Allows movement in x and z of the pushable object by unfreezing
                     //this works through clearing the bits for freezing x and z position, it is not affecting any other bits
