@@ -1,3 +1,4 @@
+using GD.Selection;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -5,10 +6,13 @@ using UnityEngine;
 
 public class Dialogue_Script : MonoBehaviour
 {
-    public TextMeshProUGUI dialogueText;
+    private TextMeshProUGUI dialogueText;
     public string[] dialogueLines;
-    public float textSpeed;
+    [SerializeField]
+    private float textSpeed;
 
+
+    private bool gamePaused;
     private int index;
 
 
@@ -16,7 +20,7 @@ public class Dialogue_Script : MonoBehaviour
     void Start()
     {
         dialogueText.text = string.Empty;
-        StartDialogue();
+        gamePaused = true;
     }
 
     // Update is called once per frame
@@ -36,9 +40,11 @@ public class Dialogue_Script : MonoBehaviour
         }
     }
 
-    void StartDialogue()
+    //To-Do: Call StartDialogue in another script
+    public void StartDialogue(int scene)
     {
         index = 0;
+        //dialogueLines = dialoguePerLevel[scene];
         StartCoroutine(PrintDialogueLine());
     }
 
@@ -61,7 +67,18 @@ public class Dialogue_Script : MonoBehaviour
         }
         else
         {
+            Unpause();
             gameObject.SetActive(false);
+        }
+    }
+
+    public void Unpause()
+    {
+        // Checks if game is paused if not unpuases it if not paused pauses game
+        if (gamePaused)
+        {
+            Time.timeScale = 1.0f;
+            gamePaused = false;
         }
     }
 }

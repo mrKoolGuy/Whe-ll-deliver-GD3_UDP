@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50993052c2f947747b5e846f6e563040, type: 3}
+  m_Name: GameScene - Level 1 - Dialogue
+  m_EditorClassIdentifier: 
+  uniqueID: fc5029fc-0565-41d2-a5aa-90cd86b8a040
+  LastUpdated: 05.12.23 11:00:31
+  LastUpdatedBy: 
+  Notes: 
+  Description: 
+  SceneObject: {fileID: 102900000, guid: f85e2efa7a0f88546be302f5fff00479, type: 3}
