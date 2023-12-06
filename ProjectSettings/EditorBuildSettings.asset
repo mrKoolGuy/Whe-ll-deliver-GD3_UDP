@@ -68,4 +68,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/Level 4 - You, again.._/Level 4 - Scene - Light.unity
     guid: 8c5703cc18b2e024793f2d7e79c7f164
+  - enabled: 1
+    path: Assets/Levels/Level 1 - Tutorial/Level 1 - Scene - Dialogue.unity
+    guid: f85e2efa7a0f88546be302f5fff00479
+  - enabled: 1
+    path: Assets/Levels/Level 2 - First Delivery/Level 2 - Scene - Dialogue.unity
+    guid: ea11995eea4aec14e9f23ce02fff8938
+  - enabled: 1
+    path: Assets/Levels/Level 3 - Reaching Heights/Level 3 - Scene - Dialogue.unity
+    guid: 3c4613100ca5c564fa6274012284ed1e
+  - enabled: 1
+    path: Assets/Levels/Level 4 - You, again.._/Level 4 - Scene - Dialogue.unity
+    guid: acd9952193d709b4baa1677d329b0064
   m_configObjects: {}

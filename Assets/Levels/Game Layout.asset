@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Game Layout
   m_EditorClassIdentifier: 
   Title: 
-  StartLevel: 0
+  StartLevel: 1
   Levels:
   - {fileID: 11400000, guid: 699ceff301febdf4d8b99a59cfa1f822, type: 2}
   - {fileID: 11400000, guid: a0a6ec3c6311bde408d6c89e2abb1f4f, type: 2}

@@ -216,18 +216,53 @@ PrefabInstance:
       value: DialogueCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 8737944900451069003, guid: 1f972363d9db35c45b1e579a6e5e4839, type: 3}
+      propertyPath: headShot
+      value: 
+      objectReference: {fileID: 867087143}
+    - target: {fileID: 8737944900451069003, guid: 1f972363d9db35c45b1e579a6e5e4839, type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 867087144}
+    - target: {fileID: 8737944900451069003, guid: 1f972363d9db35c45b1e579a6e5e4839, type: 3}
       propertyPath: dialogueLines.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8737944900451069003, guid: 1f972363d9db35c45b1e579a6e5e4839, type: 3}
       propertyPath: dialogueLines.Array.data[0]
-      value: This is the Dialogue for Level 2
+      value: This one is more difficult. A grumpy old man, wants to be as far as
+        possible from people
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737944900451069003, guid: 1f972363d9db35c45b1e579a6e5e4839, type: 3}
+      propertyPath: dialogueLines.Array.data[1]
+      value: WOW! Really making sure no one can reach him
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f972363d9db35c45b1e579a6e5e4839, type: 3}
+--- !u!114 &867087143 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3135989073696292136, guid: 1f972363d9db35c45b1e579a6e5e4839, type: 3}
+  m_PrefabInstance: {fileID: 867087142}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &867087144 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2985663228473489284, guid: 1f972363d9db35c45b1e579a6e5e4839, type: 3}
+  m_PrefabInstance: {fileID: 867087142}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!850595691 &940766566
 LightingSettings:
   m_ObjectHideFlags: 0

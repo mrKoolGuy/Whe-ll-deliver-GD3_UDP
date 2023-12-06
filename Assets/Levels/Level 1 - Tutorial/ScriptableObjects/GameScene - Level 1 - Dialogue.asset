@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50993052c2f947747b5e846f6e563040, type: 3}
   m_Name: GameScene - Level 1 - Dialogue
   m_EditorClassIdentifier: 
-  uniqueID: fc5029fc-0565-41d2-a5aa-90cd86b8a040
-  LastUpdated: 05.12.23 11:00:31
+  uniqueID: 3648f6ff-4720-450c-9990-e6d137ef0c57
+  LastUpdated: 06.12.23 11:46:19
   LastUpdatedBy: 
   Notes: 
   Description: 
