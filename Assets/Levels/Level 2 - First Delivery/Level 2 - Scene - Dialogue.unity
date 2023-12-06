@@ -216,6 +216,14 @@ PrefabInstance:
       value: DialogueCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 8737944900451069003, guid: 1f972363d9db35c45b1e579a6e5e4839, type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 21300000, guid: 5a5f9b3bba51c1a499219134db365fdc, type: 3}
+    - target: {fileID: 8737944900451069003, guid: 1f972363d9db35c45b1e579a6e5e4839, type: 3}
+      propertyPath: postman
+      value: 
+      objectReference: {fileID: 21300000, guid: 04c55072b3c4376449b990a20cd48231, type: 3}
+    - target: {fileID: 8737944900451069003, guid: 1f972363d9db35c45b1e579a6e5e4839, type: 3}
       propertyPath: headShot
       value: 
       objectReference: {fileID: 867087143}

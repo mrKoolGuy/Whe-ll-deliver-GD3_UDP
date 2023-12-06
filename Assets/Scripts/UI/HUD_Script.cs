@@ -11,10 +11,12 @@ public class HUD_Script : MonoBehaviour
     [Tooltip("This is the Image that is used to display the Progress Bar of the Score")]
 
     [Header("Stars")]
-    [SerializeField] private GameObject star1;
-    [SerializeField] private GameObject star2;
-    [SerializeField] private GameObject star3;
+    [SerializeField] private Image star1;
+    [SerializeField] private Image star2;
+    [SerializeField] private Image star3;
     [Tooltip("The TextMeshPro Objects for all the Stars")]
+    //[SerializeField] private Sprite fullStar;
+    //[SerializeField] private Sprite emptyStar;
     #endregion
 
     #region Progress Bar
@@ -32,22 +34,26 @@ public class HUD_Script : MonoBehaviour
 
     #region Stars
     //TO-DO: Add bell sound effect
+    //To-Do: Uncomment these lines and remove the Color Changes
     public void StarLost(int stars)
     {
         switch (stars)
         {
             case 2:
-                star3.SetActive(false); 
+                //star3.sprite = emptyStar; 
+                star3.color = Color.grey;
                 break;
             case 1:
-                star2.SetActive(false);
+                //star2.sprite = emptyStar;
+                star2.color = Color.grey;
                 break;
             case 0:
-                star1.SetActive(false);
+                //star1.sprite = emptyStar;
+                star1.color = Color.grey;
                 break;
         }
             
-    }
+    }  
     #endregion
 
     #region TESTING

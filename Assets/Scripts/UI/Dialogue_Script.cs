@@ -15,6 +15,10 @@ public class Dialogue_Script : MonoBehaviour
     private float textSpeed;
     [SerializeField]
     private Image headShot;
+    [SerializeField]
+    private Sprite boss;
+    [SerializeField]
+    private Sprite postman;
     private bool isBoss;
 
     private bool gamePaused;
@@ -26,14 +30,11 @@ public class Dialogue_Script : MonoBehaviour
     {
         dialogueText.text = string.Empty;
         gamePaused = true;
-        //Does this Pause?
         Time.timeScale = 0.0f;
 
         isBoss = true;
+        headShot.sprite = boss;
         StartDialogue();
-
-        //This is debug, remove later
-        headShot.color = Color.red;
     }
 
     // Update is called once per frame
@@ -52,15 +53,15 @@ public class Dialogue_Script : MonoBehaviour
             }
         }
     }
-
-    //To-Do: Call StartDialogue in another script
+    
+    //To Start the Dialogue playing
     public void StartDialogue()
     {
         index = 0;
-        //dialogueLines = dialoguePerLevel[scene];
         StartCoroutine(PrintDialogueLine());
     }
 
+    //To print every dialogue line, char by char
     IEnumerator PrintDialogueLine()
     {
         foreach (char c in dialogueLines[index].ToCharArray())
@@ -70,6 +71,7 @@ public class Dialogue_Script : MonoBehaviour
         }
     }
 
+    //To go to the next Dialogue Line, after all characters have been printed
     void nextDialogueLine()
     {
         //Check if this IF is correct
@@ -87,6 +89,7 @@ public class Dialogue_Script : MonoBehaviour
         }
     }
 
+    //unpause the game, after dialogue is done playing
     public void Unpause()
     {
         // Checks if game is paused if not unpuases it if not paused pauses game
@@ -97,18 +100,19 @@ public class Dialogue_Script : MonoBehaviour
         }
     }
 
+    //change the sprite of the character whos talking
     private void ChangeCharacter()
     {
         if (isBoss)
         {
             //Change Image to PlayerCharacter
-            headShot.color = Color.blue;
+            headShot.sprite = postman;
             isBoss = false;
         }
         else
         {
             //Change Image to Boss
-            headShot.color = Color.red;
+            headShot.sprite = boss;
             isBoss = true;
         }
     }

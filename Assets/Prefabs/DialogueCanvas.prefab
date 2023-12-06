@@ -299,9 +299,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12839a5773b9e1f4e8208b248a27f737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueText: {fileID: 2985663228473489284}
   dialogueLines: []
   textSpeed: 0.1
-  headShot: {fileID: 0}
+  headShot: {fileID: 3135989073696292136}
+  boss: {fileID: 21300000, guid: 5a5f9b3bba51c1a499219134db365fdc, type: 3}
+  postman: {fileID: 21300000, guid: 04c55072b3c4376449b990a20cd48231, type: 3}
 --- !u!1 &5212373155582006938
 GameObject:
   m_ObjectHideFlags: 0
