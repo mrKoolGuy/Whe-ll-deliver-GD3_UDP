@@ -32,22 +32,28 @@ namespace GD
 
         #endregion Properties
 
-        public void LoadScene()
+        public void LoadScene(AsyncOperationsWatcher watcher)
         {
             var sceneName = SceneObject.name;
 
             if (SceneManager.GetSceneByName(sceneName).isLoaded)
                 return;
 
-            SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+            AsyncOperation async = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+            watcher.AddAsyncToPending(async);
+            async.completed += watcher.MarkAsyncCompleted;
         }
 
-        public void UnloadScene()
+        public void UnloadScene(AsyncOperationsWatcher watcher)
         {
             var sceneName = SceneObject.name;
 
             if (SceneManager.GetSceneByName(sceneName).isLoaded)
-                SceneManager.UnloadSceneAsync(sceneName);
+            {
+                AsyncOperation async = SceneManager.UnloadSceneAsync(sceneName);
+                watcher.AddAsyncToPending(async);
+                async.completed += watcher.MarkAsyncCompleted;
+            }
         }
     }
 }

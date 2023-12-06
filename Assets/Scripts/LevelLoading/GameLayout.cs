@@ -1,4 +1,5 @@
-﻿using Sirenix.OdinInspector;
+﻿using System;
+using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -54,14 +55,17 @@ namespace GD
         #endregion Menu
 
         [ContextMenu("Load Level")]
-        public void LoadLayout()
+        public void LoadLayout(Action onLevelLoadCompleted)
         {
             if (Levels.Count == 0)
                 return;
 
-            Levels[StartLevel].LoadLevel();
-
-            IsLevelLoaded = true;
+            AsyncOperationsWatcher watcher = new AsyncOperationsWatcher(() =>
+            { 
+              IsLevelLoaded = true;
+              onLevelLoadCompleted();
+            });
+            Levels[StartLevel].LoadLevel(watcher);
         }
 
         [ContextMenu("Unload Level")]
@@ -70,9 +74,11 @@ namespace GD
             if (Levels.Count == 0)
                 return;
 
-            Levels[StartLevel].UnloadLevel();
-
-            IsLevelLoaded = false;
+            AsyncOperationsWatcher watcher = new AsyncOperationsWatcher(() =>
+            {
+                IsLevelLoaded = false;
+            });
+            Levels[StartLevel].UnloadLevel(watcher);
         }
 
         #region TODO

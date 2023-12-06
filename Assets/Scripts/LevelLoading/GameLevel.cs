@@ -16,16 +16,16 @@ namespace GD
         [Searchable]
         public List<GameScene> Scenes;
 
-        public void LoadLevel()
+        public void LoadLevel(AsyncOperationsWatcher watcher)
         {
             foreach (GameScene scene in Scenes)
-                scene.LoadScene();
+                scene.LoadScene(watcher);
         }
 
-        public void UnloadLevel()
+        public void UnloadLevel(AsyncOperationsWatcher watcher)
         {
             foreach (GameScene scene in Scenes)
-                scene.UnloadScene();
+                scene.UnloadScene(watcher);
         }
     }
 }

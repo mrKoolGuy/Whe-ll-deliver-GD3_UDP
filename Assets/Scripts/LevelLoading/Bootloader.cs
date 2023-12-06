@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace GD
 {
@@ -22,14 +24,14 @@ namespace GD
         private EmptyGameEvent onLevelLoaded;
         
         private bool isLoaded = false;
-
+        
         private void Start()
         {
-            //dont destroy if we are running the game (i.e. not in Edit mode)
+            //don't destroy if we are running the game (i.e. not in Edit mode)
             //    if (Application.isPlaying)
             DontDestroyOnLoad(this);
 
-            //do we have core system profabs
+            //do we have core system prefabs?
             if (corePersistentPrefabs == null)
                 throw new ArgumentNullException("persistentObjectPrefab has not been set in bootloader!");
 
@@ -41,17 +43,20 @@ namespace GD
 
             //load the start level in the game layout SO file
             LoadGameLayout();
+        }
 
+        private void LevelLoaded()
+        {
+            isLoaded = true;
+            
             if(onLevelLoaded)
                 onLevelLoaded.Raise(new Empty());
-            
-            isLoaded = true;
         }
 
         private void LoadGameLayout()
         {
             if(gameLayout)
-                gameLayout.LoadLayout();
+                gameLayout.LoadLayout(LevelLoaded);
         }
 
         private void LoadPersistentObjectPrefab()
