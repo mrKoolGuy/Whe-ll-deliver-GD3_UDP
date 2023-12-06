@@ -17,6 +17,10 @@ namespace GD
         [Tooltip("Spawns once to load core managers and persists between scenes")]
         private GameObject[] corePersistentPrefabs = null;
 
+        [SerializeField]
+        [Tooltip("This event gets called when all components of the level are loaded.")]
+        private EmptyGameEvent onLevelLoaded;
+        
         private bool isLoaded = false;
 
         private void Start()
@@ -38,12 +42,16 @@ namespace GD
             //load the start level in the game layout SO file
             LoadGameLayout();
 
+            if(onLevelLoaded)
+                onLevelLoaded.Raise(new Empty());
+            
             isLoaded = true;
         }
 
         private void LoadGameLayout()
         {
-            gameLayout?.LoadLayout();
+            if(gameLayout)
+                gameLayout.LoadLayout();
         }
 
         private void LoadPersistentObjectPrefab()
@@ -65,7 +73,8 @@ namespace GD
         // This function is called when the MonoBehaviour will be destroyed
         private void OnDestroy()
         {
-            gameLayout?.UnloadLayout();
+            if(gameLayout)
+                gameLayout.UnloadLayout();
         }
     }
 }
