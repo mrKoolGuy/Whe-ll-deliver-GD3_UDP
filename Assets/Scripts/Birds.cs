@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using GD;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -28,7 +29,7 @@ public class Birds : MonoBehaviour
         }
     }
     
-    void Start()
+    public void OnLevelLoaded(Empty empty)
     {
         FindNewTree(null);
     }
