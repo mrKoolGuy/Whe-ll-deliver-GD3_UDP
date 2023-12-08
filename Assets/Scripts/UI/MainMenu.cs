@@ -6,25 +6,13 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject creditsMenu;
-
+    [SerializeField] private GameObject levelSelectMenu;
+    [SerializeField] private Material skyMaterial;
     // Start is called before the first frame update
     void Start()
     {
         ShowMainMenu();
-    }
-
-    public void StartGame()
-    {
-        // Play Now Button has been pressed, here you can initialize your game (For example Load a Scene called GameLevel etc.)
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Level 2  - Scene");
-
-    }
-
-    public void ShowCreditsMenu()
-    {
-        // Show Credits Menu
-        mainMenu.SetActive(false);
-        creditsMenu.SetActive(true);
+        changeSkyOffset(1);
     }
 
     public void ShowMainMenu()
@@ -32,11 +20,16 @@ public class MainMenu : MonoBehaviour
         // Show Main Menu
         mainMenu.SetActive(true);
         creditsMenu.SetActive(false);
+        levelSelectMenu.SetActive(false);
+    }
+
+    public void changeSkyOffset(float i)
+    {
+        skyMaterial.mainTextureOffset = new Vector2(i,0);
     }
 
     public void QuitGame()
     {
-        // Quit Game
         Application.Quit();
     }
 }
