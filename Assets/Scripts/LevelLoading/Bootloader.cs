@@ -41,8 +41,10 @@ namespace GD
             //load all the core system objects (camera, managers etc)
             LoadPersistentObjectPrefab();
 
+            gameLayout.IsLevelLoaded = false;
+
             //load the start level in the game layout SO file
-            LoadGameLayout();
+            //LoadGameLayout();
         }
 
         private void LevelLoaded()
@@ -55,8 +57,10 @@ namespace GD
 
         private void LoadGameLayout()
         {
-            if(gameLayout)
-                gameLayout.LoadLayout(LevelLoaded);
+            if (gameLayout)
+            {
+                gameLayout.LoadLayout(gameLayout.StartLevel,LevelLoaded);
+            }
         }
 
         private void LoadPersistentObjectPrefab()
@@ -79,7 +83,7 @@ namespace GD
         private void OnDestroy()
         {
             if(gameLayout)
-                gameLayout.UnloadLayout();
+                gameLayout.UnloadLayout(() => { });
         }
     }
 }
