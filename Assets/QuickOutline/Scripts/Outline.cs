@@ -84,7 +84,7 @@ public class Outline : MonoBehaviour {
   // Vincent add adtiton 
   [SerializeField]
   public float OutlineDistanceMultipy = 1;
-    private GameObject camera;
+  private GameObject camera;
 
     void Awake() {
 
