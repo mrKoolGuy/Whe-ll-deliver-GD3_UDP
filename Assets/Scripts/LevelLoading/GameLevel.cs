@@ -1,7 +1,7 @@
-﻿using Sirenix.OdinInspector;
+﻿using System;
+using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 /// <summary>
 /// Stores data relating to a level comprised of multiple scenes
@@ -16,6 +16,28 @@ namespace GD
         [Searchable]
         public List<GameScene> Scenes;
 
+        public int highestScore = -1;
+        public int highestStars = -1;
+        public int leastDamage = -1;
+        
+        [HorizontalGroup("fastestPlayDuration")]
+        public double fastedPlayDuration = 0; //in seconds
+        [ShowInInspector] [ReadOnly] [LabelText("")]
+        [HorizontalGroup("fastestPlayDuration", Width = 50)]
+        public string FastedPlayDurationString => TimeSpan.FromSeconds(fastedPlayDuration).ToString(@"mm\:ss");
+
+
+        [Button]
+        public void ResetHighScore()
+        {
+            highestScore = -1;
+            highestStars = -1;
+            leastDamage = -1;
+            
+            fastedPlayDuration = 0;
+        }
+        
+        
         public void LoadLevel(AsyncOperationsWatcher watcher)
         {
             foreach (GameScene scene in Scenes)

@@ -29,7 +29,7 @@ public class Birds : MonoBehaviour
         }
     }
     
-    public void OnLevelLoaded(Empty empty)
+    public void OnLevelLoaded(GameLevel level)
     {
         FindNewTree(null);
     }

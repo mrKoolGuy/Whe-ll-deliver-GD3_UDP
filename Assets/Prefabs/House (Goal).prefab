@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4441037779861442217}
+  - component: {fileID: 6328641113057784196}
+  - component: {fileID: 6480162865529540717}
   m_Layer: 0
   m_Name: House (Goal)
   m_TagString: Untagged
@@ -33,6 +35,43 @@ Transform:
   - {fileID: 396811204122448336}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6328641113057784196
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4626034284051525753}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.553028, y: 5.0828967, z: 3.3941228}
+  m_Center: {x: -1.4061031, y: -0.33439088, z: -0.93203676}
+--- !u!114 &6480162865529540717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4626034284051525753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d6462b4750be394faea10f7e2ed352b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onLevelFinished: {fileID: 11400000, guid: 85be3facf32ba011c867e2db1e5b44b9, type: 2}
+  OnLevelEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &147344236530923067
 PrefabInstance:
   m_ObjectHideFlags: 0

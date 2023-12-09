@@ -1,5 +1,7 @@
 using System;
+using GD;
 using Sirenix.OdinInspector;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -32,11 +34,7 @@ namespace ScoringSystem
 #if UNITY_EDITOR
         private string SecondsToTimeString(float seconds)
         {
-            int roundedSeconds = (int)Math.Round(seconds);
-            int min = roundedSeconds/60;
-            int sec = roundedSeconds%60;
-
-            return $"{min:00}:{sec:00}";
+            return TimeSpan.FromSeconds(seconds).ToString(@"mm\:ss");
         }
     
         private string ScoreLimitToTime(int scoreLimit)
@@ -74,9 +72,17 @@ namespace ScoringSystem
         //this is the amount of score reduction for the scheduled interval
         private const int ScoreDecreaseBy = 1;
 
-        private int stars = 3;
+        private GameLevel level;
+
+        public int Stars { get; private set; } = 3;
         private int score;
-        
+
+        // time in seconds since level started to reaching the goal in seconds
+        public int TotalFallDamage { get; private set; } = 0;
+        public double PlayDuration { get; private set; } = 0;
+
+        private float startTime;
+
         //this property prevents the score from being set outside its bounds. It also calls events on score or star change.
         private int Score
         {
@@ -96,18 +102,40 @@ namespace ScoringSystem
             }
         }
 
-        private void Start()
+
+        public void OnLevelLoaded(GameLevel level)
         {
+            this.level = level;
+            ResetScore();
+        }
+
+        public void OnLevelFinished(Empty empty)
+        {
+            PlayDuration = Time.time - startTime;
+            if (score > level.highestScore)
+                level.highestScore = score;
+            if (Stars > level.highestStars)
+                level.highestStars = Stars;
+            if (PlayDuration < level.fastedPlayDuration || level.fastedPlayDuration == -1)
+                level.fastedPlayDuration = PlayDuration;
+            if (TotalFallDamage < level.leastDamage || level.leastDamage == -1)
+                level.leastDamage = TotalFallDamage;
+
+        }
+
+        private void ResetScore(){
             Score = MaxScore;
+            TotalFallDamage = 0;
+            startTime = Time.time;
             InvokeRepeating(nameof(DecreaseOnTime), 0, scoreDecreaseInterval);
         }
 
         private void CalcStars()
         {
-            int oldStars = stars;
-            stars = Score >= threeStarsScore ? 3 : (Score > twoStarsScore ? 2 : (Score > oneStarScore ? 1 : 0));
-            if(oldStars != stars)
-                onStarsChanged?.Invoke(stars);
+            int oldStars = Stars;
+            Stars = Score >= threeStarsScore ? 3 : (Score > twoStarsScore ? 2 : (Score > oneStarScore ? 1 : 0));
+            if(oldStars != Stars)
+                onStarsChanged?.Invoke(Stars);
         }
         
         private void DecreaseOnTime()
@@ -120,6 +148,8 @@ namespace ScoringSystem
         public void AdjustScore(int offset)
         {
             Score += offset;
+            if (offset < 0) //this would allow a future feature to add store on collectibles without affecting the damage
+                TotalFallDamage -= offset;
         }
     }
 }
