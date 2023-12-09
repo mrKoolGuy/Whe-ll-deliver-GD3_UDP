@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class AssignPlayerToCinemachine : MonoBehaviour
 {
-    public void FindAndAttachPlayer(Empty empty)
+    [SerializeField]
+    private SearchableObjectKey playerKey;
+    
+    public void FindAndAttachPlayer(GameLevel level)
     {
         CinemachineFreeLook freeLook = transform.GetComponent<CinemachineFreeLook>();
-        //TODO: implement in a more flexible manner
-        Transform playerTransform = GameObject.Find("CapsulePlayer").transform;
+        Transform playerTransform = SearchableObjects.FindObject(playerKey).transform;
         freeLook.LookAt = playerTransform;
         freeLook.Follow = playerTransform;
     }

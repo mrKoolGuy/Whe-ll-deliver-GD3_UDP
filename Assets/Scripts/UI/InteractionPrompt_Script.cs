@@ -13,7 +13,7 @@ public class InteractionPrompt_Script : MonoBehaviour
 
     private GameObject _mainCam;
 
-    public void OnLevelLoaded(Empty empty)
+    public void OnLevelLoaded(GameLevel level)
     {
         _mainCam = SearchableObjects.FindObject(mainCameraKey);
         Debug.Log($"Camera: {_mainCam}");
