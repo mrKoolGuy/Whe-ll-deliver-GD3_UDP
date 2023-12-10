@@ -3,22 +3,14 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject mainMenu;
     private bool gamePaused;
-
-    // Start is called just before any of the Update methods is called the first time
-    private void Start()
-    {
-        pauseMenu.SetActive(false);
-        gamePaused = false;
-    }
 
     // Update is called every frame, if the MonoBehaviour is enabled
     private void Update()
     {
         // Gets the input to check if esc is pressed
-        if (Input.GetKeyDown(KeyCode.Escape))
-
-            SwitchPause();
+        if (Input.GetKeyDown(KeyCode.Escape))SwitchPause();
     }
 
     public void SwitchPause()
@@ -41,6 +33,5 @@ public class PauseMenu : MonoBehaviour
     public void GoMainMenu()
     {
         Time.timeScale = 1.0f;
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Main Menu");
     }
 }
