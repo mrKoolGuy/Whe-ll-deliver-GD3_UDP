@@ -52,6 +52,10 @@ namespace GD
         [TabGroup("layout_tabs", "Menus")]
         public GameScene UIMenu;
 
+        [SerializeField]
+        [Tooltip("This event gets called when all components of the level are loaded.")]
+        private EmptyGameEvent onLevelLoaded;
+
         #endregion Menu
 
         [ContextMenu("Load Level")]
@@ -63,6 +67,7 @@ namespace GD
             AsyncOperationsWatcher watcher = new AsyncOperationsWatcher(() =>
             {
                 IsLevelLoaded = true;
+                onLevelLoaded.Raise(new Empty());
                 onLevelLoadCompleted();
             });
             Levels[levelNr].LoadLevel(watcher);
