@@ -40,6 +40,10 @@ namespace GD.Selection
 
         //Empty Game Event to handle OnPlayerGrabbed
         [SerializeField] EmptyGameEvent onGrabbed;
+
+        [SerializeField]
+        [Tooltip("This key will be used to find the player in the dictionary of SearchableObjects")]
+        private SearchableObjectKey playerKey;
         
         //This is pointing from the player to the point where the pushable object is attached to the player
         private Vector3 relativePushablePosition = Vector3.zero;
@@ -86,7 +90,7 @@ namespace GD.Selection
             //Gets the underlying physics representation of the player (the capsule)
             //TODO: do it more modular, but setting a SerializeField for a property doesn't work
             //      because this is a scriptable object, which can not contain reverences to in game objects 
-            GameObject playerObject = GameObject.Find("CapsulePlayer");
+            GameObject playerObject = SearchableObjects.FindObject(playerKey);
             Rigidbody playerBody = playerObject.GetComponent<Rigidbody>();
             Outline outline = transform.GetComponent<Outline>();
             //pressing the configured grab button toggles if a object is grabbable and pushable

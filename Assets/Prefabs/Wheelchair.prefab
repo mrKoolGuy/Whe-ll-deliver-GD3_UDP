@@ -154,8 +154,10 @@ GameObject:
   - component: {fileID: 1943457141512840581}
   - component: {fileID: 300702046746616682}
   - component: {fileID: 5289835253562997767}
-  - component: {fileID: 1029262612729288116}
   - component: {fileID: 2239084278870708584}
+  - component: {fileID: 1029262612729288116}
+  - component: {fileID: 4286392136521160861}
+  - component: {fileID: 1034009233178127198}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -246,19 +248,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 55
---- !u!114 &1029262612729288116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3408567177451498049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4886b352bbe9fab408dff175f23d068c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ui_InteractPrompt: {fileID: 1943457141512840581}
 --- !u!114 &2239084278870708584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,6 +269,62 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: InteractionPrompt_Script, Assembly-CSharp
         m_MethodName: Disable
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1029262612729288116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3408567177451498049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4886b352bbe9fab408dff175f23d068c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCameraKey: {fileID: 11400000, guid: 25c528c808ab450f9a5a01d95a6f1b54, type: 2}
+  ui_InteractPrompt: {fileID: 1943457141512840581}
+--- !u!114 &4286392136521160861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3408567177451498049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05e60d6444d490681d93c75036fc57d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: {fileID: 11400000, guid: dbe51d2f6e8fdaa8281617e51ce5610f, type: 2}
+--- !u!114 &1034009233178127198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3408567177451498049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 011f4f49762548898a9c1b71496a8b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: 
+  Event: {fileID: 11400000, guid: c706edf7c8f78c26db7eb1dfabe9b476, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1029262612729288116}
+        m_TargetAssemblyTypeName: InteractionPrompt_Script, Assembly-CSharp
+        m_MethodName: OnLevelLoaded
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -610,7 +655,8 @@ GameObject:
   - component: {fileID: 7141186920343473040}
   - component: {fileID: 5140380552920738614}
   - component: {fileID: 2204376500829678680}
-  - component: {fileID: 8608793170659052431}
+  - component: {fileID: 5707039260468472699}
+  - component: {fileID: 6090906129175626}
   m_Layer: 0
   m_Name: CapsulePlayer
   m_TagString: Player
@@ -836,7 +882,7 @@ MonoBehaviour:
   bakeKeys: []
   bakeValues: []
   OutlineDistanceMultipy: 0.1
---- !u!114 &8608793170659052431
+--- !u!114 &5707039260468472699
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -845,11 +891,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 7230004498888904527}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19898f411b47add9586d9ee6a1a55f31, type: 3}
+  m_Script: {fileID: 11500000, guid: f05e60d6444d490681d93c75036fc57d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: {fileID: 11400000, guid: 4b50b2cea39dfac12bd6942eb6f3dbe1, type: 2}
+--- !u!114 &6090906129175626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7230004498888904527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 011f4f49762548898a9c1b71496a8b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   description: 
-  Event: {fileID: 11400000, guid: 637a802b113c8c1d395a4bbc310257bd, type: 2}
+  Event: {fileID: 11400000, guid: c706edf7c8f78c26db7eb1dfabe9b476, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:

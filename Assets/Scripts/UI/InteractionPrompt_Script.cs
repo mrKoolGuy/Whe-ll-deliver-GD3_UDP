@@ -1,40 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
+using GD;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InteractionPrompt_Script : MonoBehaviour
 {
-    //[Header("Main Camera")]
-    /*[SerializeField]*/ private Camera _mainCam;
+    [SerializeField] [Tooltip("This is the key to lookup the main Camera")]
+    private SearchableObjectKey mainCameraKey;
+    
     [SerializeField] private Canvas ui_InteractPrompt;
-    //[Tooltip("This is where to input the main Camera")]
 
+    private GameObject _mainCam;
 
-    // Start is called before the first frame update
-    void Start()
+    public void OnLevelLoaded(GameLevel level)
     {
-        _mainCam = Camera.main;
+        _mainCam = SearchableObjects.FindObject(mainCameraKey);
         Debug.Log($"Camera: {_mainCam}");
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        var rotation = _mainCam.transform.rotation;
-        transform.LookAt(transform.position + rotation * Vector3.forward, rotation * Vector3.up);
+        if (_mainCam)
+        {
+            var rotation = _mainCam.transform.rotation;
+            transform.LookAt(transform.position + rotation * Vector3.forward, rotation * Vector3.up);
+        }
     }
 
     #region ENABLE/DISABLE
     public void Enable()
     {
         ui_InteractPrompt.enabled = true;
-        Debug.Log("Enabled");
     }
 
     public void Disable()
     {
         ui_InteractPrompt.enabled = false;
-        Debug.Log("Disabled");
     }
     #endregion
 }

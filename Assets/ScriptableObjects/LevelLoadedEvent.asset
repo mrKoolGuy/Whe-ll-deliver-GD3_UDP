@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 652fa848ad017f14ea4f32309aaa95e2, type: 3}
-  m_Name: SO_InteractPrompt
+  m_Script: {fileID: 11500000, guid: 2e953b3003304bd38da59c9dbb1d76f9, type: 3}
+  m_Name: LevelLoadedEvent
   m_EditorClassIdentifier: 
-  uiInteractCanvasKey: {fileID: 11400000, guid: dbe51d2f6e8fdaa8281617e51ce5610f, type: 2}
