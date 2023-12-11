@@ -158,10 +158,15 @@ MonoBehaviour:
   - {fileID: 271638698089058363, guid: f47cde4cfa9eb4c45b87851bda4d1791, type: 3}
   - {fileID: 2071269133518141234, guid: 6964ecb59d5cdc94f95b5daf52166b69, type: 3}
   - {fileID: 5548672860729758588, guid: b5e260a65851c664989061965f804b95, type: 3}
+<<<<<<< HEAD
   - {fileID: 8501472212119111347, guid: f4cbaf1f7e134f1449f49bfd8ea0ac02, type: 3}
   - {fileID: 4491319264887399731, guid: dfe049455ac18804782d505c0011423a, type: 3}
   - {fileID: 4674947637617137023, guid: c62ff9cb62f56154ebd89c5658c9858f, type: 3}
   onLevelLoaded: {fileID: 11400000, guid: 637a802b113c8c1d395a4bbc310257bd, type: 2}
+=======
+  - {fileID: 1925995388798499296, guid: e1d02349032435d5a98ccd2eb1697137, type: 3}
+  onLevelLoaded: {fileID: 11400000, guid: c706edf7c8f78c26db7eb1dfabe9b476, type: 2}
+>>>>>>> main
 --- !u!4 &1548237271
 Transform:
   m_ObjectHideFlags: 0
