@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 1
   m_EditorClassIdentifier: 
   uniqueID: 8af65abf-8f3e-4b27-95ee-38730ce873db
-  LastUpdated: 06.12.23 11:46:37
+  LastUpdated: 08/12/23 23:00:33
   LastUpdatedBy: 
   Notes: 
   Description: 
@@ -23,3 +23,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e50d498980839a945b2174a3d0cfa9f7, type: 2}
   - {fileID: 11400000, guid: d118fb68867224e46a4cb7f6cfa555e4, type: 2}
   - {fileID: 11400000, guid: 65524cc07ae37b342a50eb3489de2656, type: 2}
+  highestScore: -1
+  highestStars: -1
+  leastDamage: -1
+  fastedPlayDuration: 0

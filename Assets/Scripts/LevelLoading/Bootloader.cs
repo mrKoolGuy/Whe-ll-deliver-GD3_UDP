@@ -21,7 +21,7 @@ namespace GD
 
         [SerializeField]
         [Tooltip("This event gets called when all components of the level are loaded.")]
-        private EmptyGameEvent onLevelLoaded;
+        private LevelGameEvent onLevelLoaded;
         
         private bool isLoaded = false;
         
@@ -50,9 +50,7 @@ namespace GD
         private void LevelLoaded()
         {
             isLoaded = true;
-            
-            if(onLevelLoaded)
-                onLevelLoaded.Raise(new Empty());
+            onLevelLoaded.Raise(gameLayout.Levels[gameLayout.CurrentLevel]);
         }
 
         private void LoadGameLayout()
