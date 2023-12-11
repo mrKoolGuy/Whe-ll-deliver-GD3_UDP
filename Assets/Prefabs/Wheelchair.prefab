@@ -714,14 +714,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3ebb62db664a6644802f4e132b621af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WheelRight: {fileID: 9059103705213196342}
-  ArmRight: {fileID: 1176811867939365085}
-  WheelLeft: {fileID: 1592016497292844497}
-  ArmLeft: {fileID: 7637145299344680009}
-  Animation_speed_coration: 1.4
-  Animation_Rotationdelta_coration: 0.9
-  Animation_Arm_coration: 2.5
-  Animation_Armdelta_coration: 1.5
+  Wheel_Right: {fileID: 9059103705213196342}
+  Arm_Right: {fileID: 1176811867939365085}
+  Wheel_Left: {fileID: 1592016497292844497}
+  Arm_Left: {fileID: 7637145299344680009}
+  Animation_Wheel_speed_correction: 1
+  Animation_Wheel_delta_correction: 1
+  Animation_Arm_speed_correction: 2
+  Animation_Arm_delta_correction: 1.5
 --- !u!114 &5140380552920738614
 MonoBehaviour:
   m_ObjectHideFlags: 0

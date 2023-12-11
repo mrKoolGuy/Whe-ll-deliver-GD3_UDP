@@ -176,6 +176,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 4bea857b705815e4a821ac26b5a802c7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a10d6308c105a3c4caf07a8ca2cf4cae, type: 2}
     - target: {fileID: 919132149155446097, guid: 4bea857b705815e4a821ac26b5a802c7, type: 3}
       propertyPath: m_Name
       value: bush_A (2)
@@ -194,6 +198,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: 4bea857b705815e4a821ac26b5a802c7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8990654493446075019}
+    - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: 4bea857b705815e4a821ac26b5a802c7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6522073564013135786}
   m_SourcePrefab: {fileID: 100100000, guid: 4bea857b705815e4a821ac26b5a802c7, type: 3}
 --- !u!4 &918099754234850410 stripped
 Transform:
@@ -226,3 +233,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.5, y: 1.2, z: 1.9}
   m_Center: {x: -0.049999952, y: 0.6, z: -0.050000012}
+--- !u!114 &6522073564013135786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8825829934348471817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7e835423cdad745b75e6b667f08267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doshake: 0
+  colision: {fileID: 11400000, guid: 105786cc1c3188646b654b93c4d367bd, type: 2}

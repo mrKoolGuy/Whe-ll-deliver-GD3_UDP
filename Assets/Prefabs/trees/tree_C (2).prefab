@@ -176,6 +176,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 692f4cb149327af4cbbd5654fa3025dd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a10d6308c105a3c4caf07a8ca2cf4cae, type: 2}
     - target: {fileID: 919132149155446097, guid: 692f4cb149327af4cbbd5654fa3025dd, type: 3}
       propertyPath: m_Name
       value: tree_C (2)
@@ -198,6 +202,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: 692f4cb149327af4cbbd5654fa3025dd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2844790039525324336}
+    - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: 692f4cb149327af4cbbd5654fa3025dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6487830543181295236}
   m_SourcePrefab: {fileID: 100100000, guid: 692f4cb149327af4cbbd5654fa3025dd, type: 3}
 --- !u!1 &4460024301872117576 stripped
 GameObject:
@@ -227,6 +234,20 @@ CapsuleCollider:
   m_Height: 3.1739597
   m_Direction: 1
   m_Center: {x: 0, y: 1.1022687, z: -0.15}
+--- !u!114 &6487830543181295236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4460024301872117576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7e835423cdad745b75e6b667f08267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doshake: 0
+  colision: {fileID: 11400000, guid: 105786cc1c3188646b654b93c4d367bd, type: 2}
 --- !u!4 &5414218680338830635 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 692f4cb149327af4cbbd5654fa3025dd, type: 3}

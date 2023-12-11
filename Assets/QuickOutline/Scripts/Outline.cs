@@ -6,9 +6,11 @@
 //  Copyright © 2018 Chris Nolet. All rights reserved.
 //
 
+using Sirenix.OdinInspector.Editor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -90,6 +92,7 @@ public class Outline : MonoBehaviour {
 
     // Cache renderers
     camera = GameObject.FindGameObjectWithTag("MainCamera");
+
     renderers = GetComponentsInChildren<Renderer>();
 
     // Instantiate outline materials
