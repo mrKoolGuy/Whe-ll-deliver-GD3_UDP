@@ -12,13 +12,16 @@ namespace GD.Selection
     public class SO_UIInteractPrompt : ScriptableObject, ISelectionResponse
     {
 
-        [SerializeField] private InteractionPrompt_Script ui_Interact;
+        [SerializeField]
+        private SearchableObjectKey uiInteractCanvasKey;
+        
+        
         //True whenever the player grabs something, which means the grabbed object can be pushed or pulled
-
         public void OnSelect(Transform transform)
         {
-            ui_Interact.Enable();
-            Debug.Log("Selected");
+            SearchableObjects.FindObject(uiInteractCanvasKey)
+                ?.GetComponent<InteractionPrompt_Script>()
+                ?.Enable();
         }
 
         public void WhileSelected(Transform transform)
@@ -54,8 +57,9 @@ namespace GD.Selection
 
         public void OnDeselect(Transform transform)
         {
-            ui_Interact.Disable();
-            Debug.Log("Deselected");
+            SearchableObjects.FindObject(uiInteractCanvasKey)
+                ?.GetComponent<InteractionPrompt_Script>()
+                ?.Disable();
         }
     }
 }
