@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6016074107099939056}
   - component: {fileID: 7689759737550137927}
   - component: {fileID: 4391477675360393640}
+  - component: {fileID: 9216300331972909306}
   m_Layer: 0
   m_Name: ScoringSystem
   m_TagString: Untagged
@@ -173,6 +174,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &9216300331972909306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925995388798499296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05e60d6444d490681d93c75036fc57d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: {fileID: 11400000, guid: ad30cf8b29c52791a86e6592fa176bca, type: 2}
 --- !u!1001 &8359744012458530047
 PrefabInstance:
   m_ObjectHideFlags: 0
