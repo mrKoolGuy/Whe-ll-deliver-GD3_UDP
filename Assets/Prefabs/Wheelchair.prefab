@@ -768,6 +768,7 @@ MonoBehaviour:
   Animation_Wheel_delta_correction: 1
   Animation_Arm_speed_correction: 2
   Animation_Arm_delta_correction: 1.5
+  restIndex: 7
 --- !u!114 &5140380552920738614
 MonoBehaviour:
   m_ObjectHideFlags: 0

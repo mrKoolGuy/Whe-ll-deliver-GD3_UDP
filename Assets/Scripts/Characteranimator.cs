@@ -25,6 +25,9 @@ public class Characteranimator : MonoBehaviour
     [SerializeField]
     float Animation_Arm_delta_correction = 1.5f;
 
+    [SerializeField]
+    private int restIndex;
+
 
     float Frame_Right = 0;
     float Frame_Left = 0;
@@ -57,25 +60,23 @@ public class Characteranimator : MonoBehaviour
                 Frame_Right += speedarme  + outdeltarme;
                 Frame_Left += speedarme  - indeltarme;
 
-            } 
-            else if (rotationdelta < 0) { 
-                Frame_Right += speedarme - indeltarme;
-                Frame_Left += speedarme + outdeltarme;
-            }
-            else {
-                Frame_Right += speedarme;
-                Frame_Left = Frame_Right;
-
-
-            }
+        } 
+        else if (rotationdelta < 0) { 
+            Frame_Right += speedarme - indeltarme;
+            Frame_Left += speedarme + outdeltarme;
+        }
+        else {
+            Frame_Right += speedarme;
+            Frame_Left = Frame_Right;
+        }
 
 
         Frame_Right = (8 + Frame_Right) % 8;
         Frame_Left = (8 + Frame_Left) % 8;
         if (speed < 0.0000001 && speed > -0.0000001 && rotationdelta==0)
         {
-            Frame_Right = 0;
-            Frame_Left = 0;
+            Frame_Right = restIndex;
+            Frame_Left = restIndex;
         }
 
         Arm_Right.GetComponent<voxelanimator>().setframe((int)Frame_Left);
