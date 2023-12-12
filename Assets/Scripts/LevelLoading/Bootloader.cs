@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 namespace GD
@@ -22,7 +23,7 @@ namespace GD
         [SerializeField]
         [Tooltip("This event gets called when all components of the level are loaded.")]
         private LevelGameEvent onLevelLoaded;
-        
+
         private bool isLoaded = false;
         
         private void Start()

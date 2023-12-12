@@ -29,6 +29,9 @@ public class SearchableObjects: MonoBehaviour
     {
         if (!key)
             throw new ArgumentNullException(paramName: nameof(key), message: "The key inside the SearchableObjects script has to be set to an instance of a SearchableObjectKey, otherwise this object won't be findable in the SearchableObjects Dictionary");
-        StoredObjects.Add(key, gameObject);
+        StoredObjects[key] = gameObject;
+        string test = key.name;
+        Debug.Log($"Insert a key {test} with value {gameObject.GetHashCode()}");
+
     }
 }

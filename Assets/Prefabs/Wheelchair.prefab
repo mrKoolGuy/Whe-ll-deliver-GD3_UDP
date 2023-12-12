@@ -657,6 +657,7 @@ GameObject:
   - component: {fileID: 2204376500829678680}
   - component: {fileID: 5707039260468472699}
   - component: {fileID: 6090906129175626}
+  - component: {fileID: 6803041346542198659}
   m_Layer: 0
   m_Name: CapsulePlayer
   m_TagString: Player
@@ -812,6 +813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6737930479e156279a1524d76517aa17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPointKey: {fileID: 0}
 --- !u!81 &6553253884994386126
 AudioListener:
   m_ObjectHideFlags: 0
@@ -924,6 +926,43 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6803041346542198659}
+        m_TargetAssemblyTypeName: SetPlayerInitialPosition, Assembly-CSharp
+        m_MethodName: SetInitialPosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11500000, guid: 4a65f42e3ca14306a29c3c6041d3d941, type: 3}
+        m_TargetAssemblyTypeName: SetPlayerInitialPosition, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6803041346542198659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7230004498888904527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d91dbc32d333364c8028539dba9be3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPointKey: {fileID: 11400000, guid: 29a25f374c574414399304f96c3605ff, type: 2}
 --- !u!1 &8164078558771037576
 GameObject:
   m_ObjectHideFlags: 0

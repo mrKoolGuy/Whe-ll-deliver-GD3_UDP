@@ -54,7 +54,7 @@ namespace GD
 
         [SerializeField]
         [Tooltip("This event gets called when all components of the level are loaded.")]
-        private EmptyGameEvent onLevelLoaded;
+        private LevelGameEvent onLevelLoaded;
 
         #endregion Menu
 
@@ -67,7 +67,7 @@ namespace GD
             AsyncOperationsWatcher watcher = new AsyncOperationsWatcher(() =>
             {
                 IsLevelLoaded = true;
-                onLevelLoaded.Raise(new Empty());
+                onLevelLoaded.Raise(Levels[levelNr]);
                 onLevelLoadCompleted();
             });
             Levels[levelNr].LoadLevel(watcher);
@@ -107,7 +107,7 @@ namespace GD
             UnloadLayout(() =>
             {
                 CurrentLevel++;
-                LoadLayout(CurrentLevel + 1, () => { });
+                LoadLayout(CurrentLevel, () => { });
             });
         }
 
