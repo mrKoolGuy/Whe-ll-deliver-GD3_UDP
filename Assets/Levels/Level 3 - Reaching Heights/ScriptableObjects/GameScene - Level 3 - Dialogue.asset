@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: GameScene - Level 3 - Dialogue
   m_EditorClassIdentifier: 
   uniqueID: fc5029fc-0565-41d2-a5aa-90cd86b8a040
-  LastUpdated: 05.12.23 11:02:30
+  LastUpdated: 12/12/23 20:58:41
   LastUpdatedBy: 
   Notes: 
   Description: 
-  SceneObject: {fileID: 102900000, guid: 3cd674dcca9d967468c91e3d3f55e886, type: 3}
+  SceneObject: {fileID: 102900000, guid: 195316ee98724f6aea12aefb99ee119c, type: 3}
