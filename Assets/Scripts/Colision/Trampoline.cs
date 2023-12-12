@@ -24,7 +24,10 @@ public class Trampoline : bycolision
             rb1.angularVelocity = Vector3.zero;
             rb1.AddForce(jumpDirection * jumpForce, ForceMode.Impulse);
             otherCollider.transform.GetComponent<trampolineanimation>().onColision();
-            AudioSource.PlayClipAtPoint(sound, otherCollider.transform.position);
+            if (sound is not null)
+            {
+                AudioSource.PlayClipAtPoint(sound, otherCollider.transform.position);
+            }
 
         }
 

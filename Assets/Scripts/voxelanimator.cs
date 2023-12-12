@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.UI;
 using UnityEngine;
 
@@ -34,14 +35,17 @@ public class voxelanimator : MonoBehaviour
 
     public void setframe(int frametoload)
     {
-        if (frametoload != currentframe)
+        if (famecount == 0)
         {
-            frametoload = frametoload>= 0?frametoload % famecount: famecount - ((-frametoload)%famecount+1);
-            
-            frameList[currentframe].SetActive(false);
-            frameList[frametoload].SetActive(true);
-            currentframe = frametoload;
-            
+            if (frametoload != currentframe)
+            {
+                frametoload = frametoload >= 0 ? frametoload % famecount : famecount - ((-frametoload) % famecount + 1);
+
+                frameList[currentframe].SetActive(false);
+                frameList[frametoload].SetActive(true);
+                currentframe = frametoload;
+
+            }
         }
 
     }

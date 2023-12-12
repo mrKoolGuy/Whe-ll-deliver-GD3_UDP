@@ -10,6 +10,9 @@ public class Voxeldoshake : bycolision
 {
     public override void doaction(GameObject gobj, Collider otherCollider) {
         otherCollider.transform.GetComponent<vertex_waves_shader_logic>().bycollision();
-        AudioSource.PlayClipAtPoint(sound, otherCollider.transform.position);
+        if (sound is not null)
+        {
+            AudioSource.PlayClipAtPoint(sound, otherCollider.transform.position);
+        }
     }
 }

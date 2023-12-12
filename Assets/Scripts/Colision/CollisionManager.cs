@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Colisionmenager : MonoBehaviour
+public class CollisionManager : MonoBehaviour
 {
     [SerializeField]
     public List<bycolision> actionlist;
