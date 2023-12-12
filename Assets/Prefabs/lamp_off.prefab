@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 1372251000585279034}
   - component: {fileID: 9109437056081686747}
   - component: {fileID: 6773112603964230916}
+  - component: {fileID: 9007091141099249510}
   m_Layer: 0
   m_Name: default
-  m_TagString: Untagged
+  m_TagString: StreetLamp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8469494145858465668, guid: e0c0e12ec88cc0c4bbfb8191f7bee7e7, type: 3}
+  - {fileID: 2100000, guid: 704c1c2d3078e8a4baee93d353f99766, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,6 +106,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.6, y: 4, z: 0.6}
   m_Center: {x: 0, y: 1.9000001, z: 0}
+--- !u!114 &9007091141099249510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2871394224413867140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7e835423cdad745b75e6b667f08267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doshake: 0
+  colision: {fileID: 11400000, guid: c24f285994d7ae049a9431d607124958, type: 2}
 --- !u!1 &3801035524803018314
 GameObject:
   m_ObjectHideFlags: 0

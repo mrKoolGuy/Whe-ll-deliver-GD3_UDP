@@ -34,6 +34,7 @@ public class vertex_waves_shader_logic : MonoBehaviour
         render.material.SetVector("_Rotation", new Vector4(-r.x,-r.y,-r.z,0));
     }
 
+    public void bycollision() { doshake = true; }
     private void Update()
     {
         if (doshake)
