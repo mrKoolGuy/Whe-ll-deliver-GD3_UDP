@@ -27,6 +27,7 @@ public class AdvancedSelectionManager : MonoBehaviour
 
         Transform oldSelection = currentSelection;
 
+        if (selector == null) return;
         //create/get ray
         selector.Check(rayProvider.CreateRay());
 

@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Shader.colsion
+namespace Shader.Collision
 {
-    [CreateAssetMenu(fileName = "Colision", menuName = "DkIT/Scriptable Objects/Other/Responses/collusioneffect")]
+    [CreateAssetMenu(fileName = "Collision", menuName = "DkIT/Scriptable Objects/Other/Responses/CollisionEffect")]
  
-    public class collusioneffect : ScriptableObject
+    public class CollisionEffect : ScriptableObject
     {
         /*
          This object stores all the necessary data for the shake effect. When a collision is detected.
