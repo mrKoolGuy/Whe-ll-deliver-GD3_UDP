@@ -1,5 +1,5 @@
-﻿using System;
-using Sirenix.OdinInspector;
+﻿using Sirenix.OdinInspector;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -35,7 +35,7 @@ namespace GD
 
         [TabGroup("layout_tabs", "Levels")]
         [ReadOnly]
-        public int CurrentLevel;
+        public int CurrentLevel = 0;
 
         #endregion Level
 
@@ -52,24 +52,29 @@ namespace GD
         [TabGroup("layout_tabs", "Menus")]
         public GameScene UIMenu;
 
+        [SerializeField]
+        [Tooltip("This event gets called when all components of the level are loaded.")]
+        private LevelGameEvent onLevelLoaded;
+
         #endregion Menu
 
         [ContextMenu("Load Level")]
-        public void LoadLayout(Action onLevelLoadCompleted)
+        public void LoadLayout(int levelNr, Action onLevelLoadCompleted)
         {
             if (Levels.Count == 0)
                 return;
-
+            CurrentLevel = levelNr;
             AsyncOperationsWatcher watcher = new AsyncOperationsWatcher(() =>
-            { 
-              IsLevelLoaded = true;
-              onLevelLoadCompleted();
+            {
+                IsLevelLoaded = true;
+                onLevelLoaded.Raise(Levels[levelNr]);
+                onLevelLoadCompleted();
             });
-            Levels[StartLevel].LoadLevel(watcher);
+            Levels[levelNr].LoadLevel(watcher);
         }
 
         [ContextMenu("Unload Level")]
-        public void UnloadLayout()
+        public void UnloadLayout(Action onLevelUnloadCompleted)
         {
             if (Levels.Count == 0)
                 return;
@@ -77,45 +82,64 @@ namespace GD
             AsyncOperationsWatcher watcher = new AsyncOperationsWatcher(() =>
             {
                 IsLevelLoaded = false;
+                onLevelUnloadCompleted();
             });
-            Levels[StartLevel].UnloadLevel(watcher);
+            Levels[CurrentLevel].UnloadLevel(watcher);
         }
 
-        #region TODO
-
-        //TODO
-        public void NextLevel()
+        public void LoadLevelByNumber(int nr) //Loads a specific Level
         {
-            //load next level
+            if (IsLevelLoaded)
+            {
+                UnloadLayout(() =>
+                {
+                    LoadLayout(nr, () => { });
+                });
+            }
+            else
+            {
+                LoadLayout(nr, () => { });
+            }
         }
 
-        //Restart current level
-        public void RestartLevel()
+        public void NextLevel() // Goes to Next Level
         {
-            //reset
+            UnloadLayout(() =>
+            {
+                CurrentLevel++;
+                LoadLayout(CurrentLevel, () => { });
+            });
         }
 
-        //New game, load level 1
-        public void NewGame()
+        public void RestartLevel() // Restarts the current Level
         {
-            //set current back to start level
+            // TODO reset state of player or some of doNotDestroyObjects
+            UnloadLayout(() =>
+            {
+                LoadLayout(CurrentLevel, () => { });
+            });
         }
 
-        public void LoadMainMenu()
+        public void NewGame() // Load the first Level
         {
-            // SceneManager.LoadSceneAsync(/*main name*/);
+            if (IsLevelLoaded)
+            {
+                UnloadLayout(() =>
+                {
+                    LoadLayout(StartLevel, () => { });
+                });
+            }
+            {
+                LoadLayout(StartLevel, () => { });
+            }
         }
 
-        public void LoadPauseMenu()
+        public void Resume() // Maybe goes away *************************
         {
-            // SceneManager.LoadSceneAsync(/*pause name*/);
+            UnloadLayout(() =>
+            {
+                LoadLayout(CurrentLevel, () => { });
+            });
         }
-
-        public void SaveGame()
-        {
-            // AssetDatabase
-        }
-
-        #endregion TODO
     }
 }
