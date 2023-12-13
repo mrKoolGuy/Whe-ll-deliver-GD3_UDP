@@ -59,6 +59,7 @@ namespace GD.Selection
         public void OnSelect(Transform transform)
         {
             //Save original material and apply the onSelectMaterial
+
             Renderer renderer = transform.GetComponent<Renderer>();
             if (renderer is not null)
             {
@@ -81,6 +82,12 @@ namespace GD.Selection
                 outline.OutlineDistanceMultipy = OutlineDistanceMultipy;
                 outline.enabled = true;
             }
+
+            selectstatus status = transform.GetComponent<selectstatus>();
+            if (status is not null)
+            {
+                status.startus = 1;
+            }
         }
 
         public void WhileSelected(Transform transform)
@@ -93,6 +100,8 @@ namespace GD.Selection
             GameObject playerObject = SearchableObjects.FindObject(playerKey);
             Rigidbody playerBody = playerObject.GetComponent<Rigidbody>();
             Outline outline = transform.GetComponent<Outline>();
+            selectstatus status = transform.GetComponent<selectstatus>();
+
             //pressing the configured grab button toggles if a object is grabbable and pushable
             if (Input.GetButtonDown("Grab"))
             {
@@ -113,6 +122,10 @@ namespace GD.Selection
                     if(outline is not null)
                         outline.OutlineColor = onPickupColor;
                     AudioSource.PlayClipAtPoint(pickupAudioClip, transform.position);
+                    if (status is not null)
+                    {
+                        status.startus = 2;
+                    }
                 }
                 else
                 {
@@ -125,6 +138,10 @@ namespace GD.Selection
                     if (outline is not null)
                         outline.OutlineColor = onSelectColor;
                     AudioSource.PlayClipAtPoint(setDownAudioClip, transform.position);
+                    if (status is not null)
+                    {
+                        status.startus = 1;
+                    }
                 }
                 relativePushablePosition = pushableBody.position - playerBody.transform.position;
             }
@@ -169,6 +186,9 @@ namespace GD.Selection
                     outline.OutlineColor = Vector4.zero;
                     outline.enabled = false;
                 }
+
+                if (transform.TryGetComponent<selectstatus>(out var status))
+                    status.startus = 0;
             }
         }
     }

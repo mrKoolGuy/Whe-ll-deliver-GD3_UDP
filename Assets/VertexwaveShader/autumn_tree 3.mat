@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: autumn_tree 3
-  m_Shader: {fileID: -6465566751694194690, guid: d314bc35493cd1d4887df6292f108f62, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 83318a13df4e4304bb61d2d1b019b2b4, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
