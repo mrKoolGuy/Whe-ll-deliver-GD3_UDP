@@ -35,7 +35,7 @@ public class voxelanimator : MonoBehaviour
 
     public void setframe(int frametoload)
     {
-        if (famecount == 0)
+        if (famecount != 0)
         {
             if (frametoload != currentframe)
             {
@@ -59,7 +59,7 @@ public class voxelanimator : MonoBehaviour
         // Akkumuliere die vergangene Zeit
         vergangeneZeit += Time.deltaTime;
 
-        // Überprüfe, ob 0,2 Sekunden vergangen sind
+        // ï¿½berprï¿½fe, ob 0,2 Sekunden vergangen sind
         if (vergangeneZeit >= 0.1f)
         {
             nextframe -= 1;

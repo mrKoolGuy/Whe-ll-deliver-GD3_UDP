@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class change_material_by_secltion_chidren : MonoBehaviour
+public class ChangeMaterialBySelectionChildren : MonoBehaviour
 {
     [SerializeField]
     private GameObject OnGameObject;
@@ -12,16 +13,14 @@ public class change_material_by_secltion_chidren : MonoBehaviour
     [SerializeField]
     private Material onPickupMaterial;
     [SerializeField]
-    private Material ondefuald;
-
-    [SerializeField]
+    private Material onDefault;
+    
     private Renderer renderer;
 
     private int oldstatus;
     selectstatus selectstatus;
     // Start is called before the first frame update
     void Start()
-
     {
         oldstatus = 0;
         selectstatus = transform.GetComponent<selectstatus>();
@@ -45,7 +44,7 @@ public class change_material_by_secltion_chidren : MonoBehaviour
             }
             else
             {
-                renderer.material = ondefuald;
+                renderer.material = onDefault;
             }
 
         }

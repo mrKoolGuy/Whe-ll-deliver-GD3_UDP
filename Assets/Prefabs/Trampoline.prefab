@@ -4384,8 +4384,7 @@ MonoBehaviour:
   OnGameObject: {fileID: 387097896873343087}
   onSelectMaterial: {fileID: 2100000, guid: 2a999d0971012234ebf97571f3f1ce75, type: 2}
   onPickupMaterial: {fileID: 2100000, guid: 4a043b380323b884680797ae4be44a1f, type: 2}
-  ondefuald: {fileID: 2100000, guid: 4252a1dcabba012499d5a3c818a4c778, type: 2}
-  renderer: {fileID: 0}
+  onDefault: {fileID: 2100000, guid: 4252a1dcabba012499d5a3c818a4c778, type: 2}
 --- !u!54 &8945357736333705450
 Rigidbody:
   m_ObjectHideFlags: 0
