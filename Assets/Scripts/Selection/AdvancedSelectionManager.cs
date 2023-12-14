@@ -9,7 +9,8 @@ using UnityEngine;
 public class AdvancedSelectionManager : MonoBehaviour
 {
     [SerializeField]
-    [RequireInterface(typeof(ISelectionResponse))]
+    //[RequireInterface(typeof(ISelectionResponse))]
+    [Tooltip("Must Contain an ISelectionResponse")]
     private List<ScriptableObject> selectionResponses;
 
     private IRayProvider rayProvider;
