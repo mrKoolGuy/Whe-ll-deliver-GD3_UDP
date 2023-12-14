@@ -1,3 +1,4 @@
+using Cinemachine;
 using UnityEngine;
 
 public class SetObjectInitialPosition : MonoBehaviour
@@ -15,6 +16,9 @@ public class SetObjectInitialPosition : MonoBehaviour
             //this makes sure the object will also respawn here if it falls
             respawn.SetSpawnPositionAndRotation(spawnPointTransform);
             respawn.RespawnObject();
+        } else if(TryGetComponent(out CinemachineFreeLook cinemachine)) //if it is a cinemachine camera setting position normally doesn't work
+        {
+            cinemachine.ForceCameraPosition(spawnPointTransform.position, spawnPointTransform.rotation);
         }
         else
         {
