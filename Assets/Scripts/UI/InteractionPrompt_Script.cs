@@ -13,10 +13,9 @@ public class InteractionPrompt_Script : MonoBehaviour
 
     private GameObject _mainCam;
 
-    public void OnLevelLoaded(GameLevel level)
+    public void AttachCameraOnLevelLoaded(GameLevel level)
     {
         _mainCam = SearchableObjects.FindObject(mainCameraKey);
-        Debug.Log($"Camera: {_mainCam}");
     }
 
     // Update is called once per frame
