@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf973078d1c43e34dbd4444df20a2a96, type: 3}
+  m_Name: UISoundPlayer
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 5df1ef81f02544a34b3335c59fd0b380, type: 3}
+  audioSourceKey: {fileID: 11400000, guid: 046c6aaf078ff194f836cee13c0d6a92, type: 2}
