@@ -147,6 +147,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 60edbc1486b971040b6d4e80788a0818, type: 2}
+        m_TargetAssemblyTypeName: GD.GameLayout, Assembly-CSharp
+        m_MethodName: ResumeTime
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4391477675360393640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,6 +181,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: ScoringSystem.Scoring, Assembly-CSharp
         m_MethodName: OnLevelFinished
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 60edbc1486b971040b6d4e80788a0818, type: 2}
+        m_TargetAssemblyTypeName: GD.GameLayout, Assembly-CSharp
+        m_MethodName: PauseTime
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

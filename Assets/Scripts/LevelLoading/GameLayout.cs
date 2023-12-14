@@ -57,6 +57,8 @@ namespace GD
         private LevelGameEvent onLevelLoaded;
 
         #endregion Menu
+        
+        private static float originalTimeScale;
 
         [ContextMenu("Load Level")]
         public void LoadLayout(int levelNr, Action onLevelLoadCompleted)
@@ -140,6 +142,20 @@ namespace GD
             {
                 LoadLayout(CurrentLevel, () => { });
             });
+        }
+
+        public static void PauseTime()
+        {
+            if (Time.timeScale != 0)
+            {
+                originalTimeScale = Time.timeScale;
+                Time.timeScale = 0;
+            }
+        }
+
+        public static void ResumeTime()
+        {
+            Time.timeScale = originalTimeScale;
         }
     }
 }
