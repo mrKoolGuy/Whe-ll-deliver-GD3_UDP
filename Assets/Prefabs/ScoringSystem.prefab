@@ -51,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: This is called every time the player falls a distance greater than
     the one defined in the FallDetection script of the player
+  order: 100
   Event: {fileID: 11400000, guid: d0118e3b132a8e395bf9aa17106ac6e5, type: 2}
   Response:
     m_PersistentCalls:
@@ -128,7 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 011f4f49762548898a9c1b71496a8b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 
+  description: Called last, so time is only started when everything else is done
+  order: 120
   Event: {fileID: 11400000, guid: c706edf7c8f78c26db7eb1dfabe9b476, type: 2}
   Response:
     m_PersistentCalls:
@@ -157,7 +159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19898f411b47add9586d9ee6a1a55f31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 
+  description: This is called first to ensure time is stopped as early as possible
+  order: 80
   Event: {fileID: 11400000, guid: 85be3facf32ba011c867e2db1e5b44b9, type: 2}
   Response:
     m_PersistentCalls:
