@@ -1,9 +1,17 @@
+using GD;
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject pauseMenu;
-    [SerializeField] private GameObject mainMenu;
+    [SerializeField]
+    private GameObject pauseMenu;
+    [SerializeField]
+    private SearchableObjectKey mainMenu;
+    [SerializeField]
+    private GameLayout gameLayout;
+
     private bool gamePaused;
 
     // Update is called every frame, if the MonoBehaviour is enabled
@@ -33,5 +41,9 @@ public class PauseMenu : MonoBehaviour
     public void GoMainMenu()
     {
         Time.timeScale = 1.0f;
+        GameObject mainMenuObj = SearchableObjects.FindObject(mainMenu);
+        MainMenu script = mainMenuObj.GetComponent<MainMenu>();
+        script.ShowMainMenu();
+        gameLayout.UnloadLayout(()=>{ });
     }
 }

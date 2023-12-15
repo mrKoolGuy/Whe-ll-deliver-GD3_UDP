@@ -8,6 +8,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject creditsMenu;
     [SerializeField] private GameObject levelSelectMenu;
     [SerializeField] private Material skyMaterial;
+
+    [SerializeField] private ScriptableObject gameLayout;
     // Start is called before the first frame update
     void Start()
     {
