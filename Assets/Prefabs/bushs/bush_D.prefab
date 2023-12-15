@@ -188,6 +188,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: b8d675693e3c0f44fa85395f332ecf7b, type: 3}
+      propertyPath: m_TagString
+      value: Tree
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -201,9 +205,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: b8d675693e3c0f44fa85395f332ecf7b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7152670660635267358}
-    - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: b8d675693e3c0f44fa85395f332ecf7b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2083544893707651645}
   m_SourcePrefab: {fileID: 100100000, guid: b8d675693e3c0f44fa85395f332ecf7b, type: 3}
 --- !u!4 &1863251613516086000 stripped
 Transform:
@@ -248,19 +249,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7e835423cdad745b75e6b667f08267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doshake: 0
-  colision: {fileID: 0}
---- !u!114 &2083544893707651645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8006698875163220115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c7e835423cdad745b75e6b667f08267, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doshake: 0
-  colision: {fileID: 11400000, guid: 105786cc1c3188646b654b93c4d367bd, type: 2}
+  collision: {fileID: 11400000, guid: 53c12d3e4afe6e64aa1e311d5880d2a6, type: 2}

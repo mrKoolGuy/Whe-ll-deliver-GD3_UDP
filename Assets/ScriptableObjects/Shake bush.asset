@@ -10,61 +10,88 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a802532d16bd4e046984d597f7239438, type: 3}
-  m_Name: Shake nomal
+  m_Name: Shake bush
   m_EditorClassIdentifier: 
   shakegraph:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.0041618347
       value: 0
-      inSlope: 8.284925
-      outSlope: 8.284925
+      inSlope: 17.161028
+      outSlope: 17.161028
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.10962853
-      value: 0.90826416
-      inSlope: -8.38399
-      outSlope: -8.38399
+      time: 0.062433403
+      value: 1
+      inSlope: -4.979437
+      outSlope: -4.979437
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.16095424
-      value: -0.377594
-      inSlope: -11.318171
-      outSlope: -11.318171
+      time: 0.10445623
+      value: -0.13965496
+      inSlope: -9.936577
+      outSlope: -9.936577
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.45120752
-      value: 0.32382202
-      inSlope: 0.46223903
-      outSlope: 0.46223903
+      time: 0.22032267
+      value: 0.7
+      inSlope: -1.7743394
+      outSlope: -1.7743394
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.75819504
-      value: -0.1342302
-      inSlope: -0.6109508
-      outSlope: -0.6109508
+      time: 0.2932002
+      value: -0.086744085
+      inSlope: -1.4949024
+      outSlope: -1.4949024
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1.3447767
-      value: 0.024255767
-      inSlope: 0.11658328
-      outSlope: 0.11658328
+      time: 0.35555834
+      value: 0.4
+      inSlope: 2.9691947
+      outSlope: 2.9691947
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.50206494
+      value: 0.12643799
+      inSlope: -2.368307
+      outSlope: -2.368307
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5776711
+      value: -0.09050488
+      inSlope: -1.2948629
+      outSlope: -1.2948629
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.8234753
+      value: -0.021764487
+      inSlope: 0.14907701
+      outSlope: 0.14907701
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -72,8 +99,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 2
       value: 0
-      inSlope: -0.03701909
-      outSlope: -0.03701909
+      inSlope: 0.018498965
+      outSlope: 0.018498965
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -81,6 +108,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  offset_Range_X: {x: -5, y: 5}
-  offset_Range_Y: {x: -5, y: 5}
-  offset_Range_Z: {x: -5, y: 5}
+  offset_Range_X: {x: -20, y: 20}
+  offset_Range_Y: {x: 0, y: 0}
+  offset_Range_Z: {x: 4, y: 4}
