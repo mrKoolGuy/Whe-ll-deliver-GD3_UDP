@@ -108,6 +108,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  offset_Range_X: {x: -3, y: 3}
+  offset_Range_X: {x: -2, y: 2}
   offset_Range_Y: {x: 0, y: 0}
-  offset_Range_Z: {x: -3, y: 3}
+  offset_Range_Z: {x: -2, y: 2}
