@@ -251,5 +251,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7e835423cdad745b75e6b667f08267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doshake: 0
-  colision: {fileID: 11400000, guid: 105786cc1c3188646b654b93c4d367bd, type: 2}
+  collision: {fileID: 11400000, guid: 105786cc1c3188646b654b93c4d367bd, type: 2}

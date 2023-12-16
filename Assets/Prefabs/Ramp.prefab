@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 2.296, y: -1.1352304, z: -19.407}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.91, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -216,10 +216,8 @@ MonoBehaviour:
   m_VersionIndex: 4710
   m_IsSelectable: 1
   m_SelectedFaces: 
-  m_SelectedEdges:
-  - a: 3
-    b: 4
-  m_SelectedVertices: 0300000004000000
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!114 &8170127161793553428
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -179,7 +179,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: e17bcf8096cb9bc419b3046dbfcae033, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 442bcfce75ffc1f44b5879afd2ac533d, type: 2}
+      objectReference: {fileID: 2100000, guid: 4a58cace1019285499f04d46dd1ada62, type: 2}
     - target: {fileID: 919132149155446097, guid: e17bcf8096cb9bc419b3046dbfcae033, type: 3}
       propertyPath: m_Name
       value: tree_C
@@ -251,5 +251,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7e835423cdad745b75e6b667f08267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doshake: 0
-  colision: {fileID: 11400000, guid: 105786cc1c3188646b654b93c4d367bd, type: 2}
+  collision: {fileID: 11400000, guid: 105786cc1c3188646b654b93c4d367bd, type: 2}

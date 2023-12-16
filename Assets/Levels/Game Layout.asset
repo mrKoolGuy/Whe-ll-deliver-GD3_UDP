@@ -19,6 +19,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a0a6ec3c6311bde408d6c89e2abb1f4f, type: 2}
   - {fileID: 11400000, guid: afa83ceaf234a6b42b984750a3c8d7f1, type: 2}
   - {fileID: 11400000, guid: d3e0964ef8c293548aa635a0efd283fd, type: 2}
+  - {fileID: 11400000, guid: 235050bbb5303674d80ea8805ec593a2, type: 2}
   IsLevelLoaded: 0
   CurrentLevel: 0
   MainMenu: {fileID: 11400000, guid: b224497eee83dda4bb26cf19dc5b5bb7, type: 2}
