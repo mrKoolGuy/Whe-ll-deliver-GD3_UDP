@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 69054830f1f00334daf9b1233af5ad16, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 442bcfce75ffc1f44b5879afd2ac533d, type: 2}
+      objectReference: {fileID: 2100000, guid: 25cd8b9fcf6d06642a24b9a7c3261094, type: 2}
     - target: {fileID: 919132149155446097, guid: 69054830f1f00334daf9b1233af5ad16, type: 3}
       propertyPath: m_Name
       value: grass_patches-5
@@ -81,5 +81,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7e835423cdad745b75e6b667f08267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doshake: 0
-  colision: {fileID: 0}
+  collision: {fileID: 0}

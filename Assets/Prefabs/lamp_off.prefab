@@ -118,8 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7e835423cdad745b75e6b667f08267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doshake: 0
-  colision: {fileID: 11400000, guid: c24f285994d7ae049a9431d607124958, type: 2}
+  collision: {fileID: 11400000, guid: c24f285994d7ae049a9431d607124958, type: 2}
 --- !u!1 &3801035524803018314
 GameObject:
   m_ObjectHideFlags: 0

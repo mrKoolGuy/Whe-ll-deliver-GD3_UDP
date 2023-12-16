@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: summer_tree
+  m_Name: summer_Baum
   m_Shader: {fileID: -6465566751694194690, guid: 83318a13df4e4304bb61d2d1b019b2b4, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -61,7 +61,7 @@ Material:
     - _QueueOffset: 0
     - _UseSineWave: 1
     m_Colors:
-    - _Ampitude: {r: 0.01, g: 0.005, b: -0.01, a: 0}
+    - _Ampitude: {r: 0.01, g: 0.005, b: 0.01, a: 0}
     - _Bais: {r: -0.005, g: 0, b: 0.005, a: 0}
     - _OfsetBais: {r: 0, g: 0, b: 0, a: 0}
     - _Rotation: {r: 0, g: 0, b: 0, a: 0}
