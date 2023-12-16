@@ -1,8 +1,5 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 namespace GD
 {
@@ -38,6 +35,9 @@ namespace GD
 
             if (isLoaded)
                 return;
+
+            //We don't want any GameObjects moving while we are in the menu
+            GameLayout.PauseTime();
 
             //load all the core system objects (camera, managers etc)
             LoadPersistentObjectPrefab();
