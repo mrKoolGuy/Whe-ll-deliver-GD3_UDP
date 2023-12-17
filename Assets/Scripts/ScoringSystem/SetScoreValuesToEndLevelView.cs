@@ -10,8 +10,8 @@ namespace ScoringSystem
         [SerializeField]
         private SearchableObjectKey scoringSystemKey;
 
-        [SerializeField] [Tooltip("Each containing UnityEvent controls one of the stars")]
-        private List<UnityEvent<bool>> setStarEnabled;
+        [SerializeField] [Tooltip("Containing a reference to the stars prefab that is included in the End Level UI")]
+        private GameObject starsPrefab;
 
         [SerializeField] private UnityEvent<string> setDamage;
 
@@ -23,10 +23,7 @@ namespace ScoringSystem
             setDamage?.Invoke(scoring.TotalFallDamage.ToString());
             setTime?.Invoke(TimeSpan.FromSeconds(scoring.PlayDuration).ToString(@"mm\:ss"));
 
-            for (int i = 0; i < setStarEnabled.Count; i++)
-            {
-                setStarEnabled[i]?.Invoke(scoring.Stars > i);
-            }
+            starsPrefab.GetComponent<Stars>().SetStars(scoring.Stars);
         }
     }
 }

@@ -200,6 +200,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 641a5f5b859c7b841abf7759a0786db7, type: 3}
+      propertyPath: m_TagString
+      value: Tree
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -252,8 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7e835423cdad745b75e6b667f08267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doshake: 0
-  colision: {fileID: 11400000, guid: 105786cc1c3188646b654b93c4d367bd, type: 2}
+  collision: {fileID: 11400000, guid: 53c12d3e4afe6e64aa1e311d5880d2a6, type: 2}
 --- !u!4 &5580156773465810053 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 641a5f5b859c7b841abf7759a0786db7, type: 3}

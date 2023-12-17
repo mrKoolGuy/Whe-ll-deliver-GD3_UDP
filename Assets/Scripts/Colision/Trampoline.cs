@@ -1,37 +1,31 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "Trampoline", menuName = "DkIT/Scriptable Objects/Actionbycollision/Trampoline")]
-[Serializable]
-public class Trampoline : bycolision
+namespace Colision
 {
-    [SerializeField]
-    private Vector3 jumpDirection = new Vector3(0.0f, 1.0f, 0.0f);
-    [SerializeField]
-    private float jumpForce = 70.0f;
-    [SerializeField]
-    
-
-    public override void doaction(GameObject gobj, Collider otherCollider)
+    [CreateAssetMenu(fileName = "TrampolineCollisionBehaviour", menuName = "DkIT/Scriptable Objects/Behaviours/CollisionBehaviour/Trampoline")]
+    [Serializable]
+    public class Trampoline : CollisionBehaviour
     {
-        if (gobj.transform.position.y > otherCollider.transform.position.y+2.003)
+        [SerializeField]
+        private Vector3 jumpDirection = new Vector3(0.0f, 1.0f, 0.0f);
+        [SerializeField]
+        private float jumpForce = 70.0f;
+    
+        public override void doaction(GameObject gobj, Collider otherCollider)
         {
-            Rigidbody rb1 = gobj.GetComponentInParent<Rigidbody>();
-            rb1.velocity = Vector3.zero;
-            rb1.angularVelocity = Vector3.zero;
-            rb1.AddForce(jumpDirection * jumpForce, ForceMode.Impulse);
-            otherCollider.transform.GetComponent<trampolineanimation>().onColision();
-            if (sound is not null)
+            if (gobj.transform.position.y > otherCollider.transform.position.y+2.003)
             {
-                AudioSource.PlayClipAtPoint(sound, otherCollider.transform.position);
+                Rigidbody rb1 = gobj.GetComponentInParent<Rigidbody>();
+                rb1.velocity = Vector3.zero;
+                rb1.angularVelocity = Vector3.zero;
+                rb1.AddForce(jumpDirection * jumpForce, ForceMode.Impulse);
+                otherCollider.transform.GetComponent<trampolineanimation>().onColision();
+                //call the action implemented in CollisionBehaviour
+                base.doaction(gobj, otherCollider);
             }
-
         }
 
-
     }
-
 }
