@@ -179,7 +179,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 076dc97da2fd06d408ec2461a1b3a167, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 442bcfce75ffc1f44b5879afd2ac533d, type: 2}
+      objectReference: {fileID: 2100000, guid: 3e2eeda09b71d324d8df9145bf8ec285, type: 2}
     - target: {fileID: 919132149155446097, guid: 076dc97da2fd06d408ec2461a1b3a167, type: 3}
       propertyPath: m_Name
       value: bush_A
@@ -187,6 +187,10 @@ PrefabInstance:
     - target: {fileID: 1151388028547126963, guid: 076dc97da2fd06d408ec2461a1b3a167, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 076dc97da2fd06d408ec2461a1b3a167, type: 3}
+      propertyPath: m_TagString
+      value: Tree
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -245,5 +249,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7e835423cdad745b75e6b667f08267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doshake: 0
-  colision: {fileID: 11400000, guid: 105786cc1c3188646b654b93c4d367bd, type: 2}
+  collision: {fileID: 11400000, guid: 53c12d3e4afe6e64aa1e311d5880d2a6, type: 2}

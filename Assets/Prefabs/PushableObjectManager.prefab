@@ -78,6 +78,6 @@ MonoBehaviour:
   selectableTag: Selectable
   layerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 5047
   radius: 0.01
   maxDistance: 1.3

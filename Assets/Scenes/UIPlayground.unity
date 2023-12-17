@@ -1702,7 +1702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8316502758677429675, guid: 8763943398da2081baa23470b81c9f0a, type: 3}
       propertyPath: onStarsChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StarLost
+      value: StarsChanged
       objectReference: {fileID: 0}
     - target: {fileID: 8316502758677429675, guid: 8763943398da2081baa23470b81c9f0a, type: 3}
       propertyPath: onScoreChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

@@ -27,20 +27,20 @@ public class PauseMenu : MonoBehaviour
         if (gamePaused)
         {
             pauseMenu.SetActive(false);
-            Time.timeScale = 1.0f;
+            GameLayout.ResumeTime();
             gamePaused = false;
         }
         else
         {
             pauseMenu.SetActive(true);
-            Time.timeScale = 0.0f;
+            GameLayout.PauseTime();
             gamePaused = true;
         }
     }
 
     public void GoMainMenu()
     {
-        Time.timeScale = 1.0f;
+        //Time.timeScale = 1.0f;
         GameObject mainMenuObj = SearchableObjects.FindObject(mainMenu);
         MainMenu script = mainMenuObj.GetComponent<MainMenu>();
         script.ShowMainMenu();

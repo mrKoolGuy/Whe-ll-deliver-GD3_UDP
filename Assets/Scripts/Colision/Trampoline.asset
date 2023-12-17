@@ -19,4 +19,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a8dec5c2436cf45e3a141328443360cb, type: 3}
   - {fileID: 8300000, guid: 3f9adf77e5fb81ce7a5ce24e5b65f396, type: 3}
   jumpDirection: {x: 0, y: 1, z: 0}
-  jumpForce: 70
+  jumpForce: 65
