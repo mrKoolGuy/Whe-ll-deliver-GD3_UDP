@@ -105,7 +105,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 5047
+    m_Bits: 4294967295
 --- !u!1 &65675720533241902
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,7 +387,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 4274952186477274330}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: changeSkyOffset
+        m_MethodName: ChangeSkyOffset
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1396,7 +1396,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 4274952186477274330}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: changeSkyOffset
+        m_MethodName: ChangeSkyOffset
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2917,7 +2917,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 4274952186477274330}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: changeSkyOffset
+        m_MethodName: ChangeSkyOffset
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4581,13 +4581,13 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 4274952186477274330}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: changeSkyOffset
+        m_MethodName: ChangeSkyOffset
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
-          m_FloatArgument: 1.2
+          m_FloatArgument: 0.2
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -4750,7 +4750,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 4274952186477274330}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: changeSkyOffset
+        m_MethodName: ChangeSkyOffset
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4956,7 +4956,7 @@ MonoBehaviour:
   mainMenu: {fileID: 6722737943039772358}
   creditsMenu: {fileID: 711766786951661532}
   levelSelectMenu: {fileID: 6050803556637150253}
-  skyMaterial: {fileID: 2100000, guid: e68f77e240a7f8643b5cc4253dc37516, type: 2}
+  skyDomeKey: {fileID: 11400000, guid: dae8c482d806a002cbe0b8ffbe5ad2a8, type: 2}
   gameLayout: {fileID: 0}
 --- !u!114 &6424830579379112430
 MonoBehaviour:

@@ -2569,6 +2569,8 @@ GameObject:
   - component: {fileID: 5283604871684085578}
   - component: {fileID: 6759693325571803061}
   - component: {fileID: 3845836061761948899}
+  - component: {fileID: 5355219512483448328}
+  - component: {fileID: 717863997780259966}
   m_Layer: 0
   m_Name: SkyDome 1
   m_TagString: Untagged
@@ -2651,6 +2653,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5355219512483448328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5548672860729758588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4289d83cbee68307fa7d2d6471de9ee7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCameraKey: {fileID: 11400000, guid: 25c528c808ab450f9a5a01d95a6f1b54, type: 2}
+--- !u!114 &717863997780259966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5548672860729758588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05e60d6444d490681d93c75036fc57d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: {fileID: 11400000, guid: dae8c482d806a002cbe0b8ffbe5ad2a8, type: 2}
 --- !u!1 &5647301364226629707
 GameObject:
   m_ObjectHideFlags: 0
