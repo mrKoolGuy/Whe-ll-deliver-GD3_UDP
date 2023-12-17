@@ -1,10 +1,8 @@
-using GD.Selection;
 using System.Collections;
-using System.Collections.Generic;
+using GD;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class Dialogue_Script : MonoBehaviour
 {
@@ -21,7 +19,6 @@ public class Dialogue_Script : MonoBehaviour
     private Sprite postman;
     private bool isBoss;
 
-    private bool gamePaused;
     private int index;
 
 
@@ -29,8 +26,7 @@ public class Dialogue_Script : MonoBehaviour
     void Start()
     {
         dialogueText.text = string.Empty;
-        gamePaused = true;
-        Time.timeScale = 0.0f;
+        GameLayout.PauseTime();
 
         isBoss = true;
         headShot.sprite = boss;
@@ -84,21 +80,13 @@ public class Dialogue_Script : MonoBehaviour
         }
         else
         {
-            Unpause();
             gameObject.SetActive(false);
+            //unpause the game, after dialogue is done playing
+            GameLayout.ResumeTime();
         }
     }
 
-    //unpause the game, after dialogue is done playing
-    public void Unpause()
-    {
-        // Checks if game is paused if not unpuases it if not paused pauses game
-        if (gamePaused)
-        {
-            Time.timeScale = 1.0f;
-            gamePaused = false;
-        }
-    }
+
 
     //change the sprite of the character whos talking
     private void ChangeCharacter()

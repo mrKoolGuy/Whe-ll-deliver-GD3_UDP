@@ -8,6 +8,8 @@ TagManager:
   - BirdSpot
   - Tree
   - GroundTrigger
+  - JumpPad
+  - StreetLamp
   layers:
   - Default
   - TransparentFX

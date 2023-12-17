@@ -1,7 +1,5 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace GD
 {
@@ -22,7 +20,7 @@ namespace GD
         [SerializeField]
         [Tooltip("This event gets called when all components of the level are loaded.")]
         private LevelGameEvent onLevelLoaded;
-        
+
         private bool isLoaded = false;
         
         private void Start()
@@ -38,11 +36,16 @@ namespace GD
             if (isLoaded)
                 return;
 
+            //We don't want any GameObjects moving while we are in the menu
+            GameLayout.PauseTime();
+
             //load all the core system objects (camera, managers etc)
             LoadPersistentObjectPrefab();
 
+            gameLayout.IsLevelLoaded = false;
+
             //load the start level in the game layout SO file
-            LoadGameLayout();
+            //LoadGameLayout();
         }
 
         private void LevelLoaded()
@@ -53,8 +56,10 @@ namespace GD
 
         private void LoadGameLayout()
         {
-            if(gameLayout)
-                gameLayout.LoadLayout(LevelLoaded);
+            if (gameLayout)
+            {
+                gameLayout.LoadLayout(gameLayout.StartLevel,LevelLoaded);
+            }
         }
 
         private void LoadPersistentObjectPrefab()
@@ -77,7 +82,7 @@ namespace GD
         private void OnDestroy()
         {
             if(gameLayout)
-                gameLayout.UnloadLayout();
+                gameLayout.UnloadLayout(() => { });
         }
     }
 }

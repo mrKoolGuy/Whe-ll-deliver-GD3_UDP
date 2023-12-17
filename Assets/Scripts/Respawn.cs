@@ -14,19 +14,29 @@ public class Respawn : MonoBehaviour
     
     void Start()
     {
-        origPosition = transform.position;
-        origRotation = transform.rotation;
+        SetSpawnPositionAndRotation(transform);
     }
+
+    public void SetSpawnPositionAndRotation(Transform spawnTransform)
+    {
+        origPosition = spawnTransform.position;
+        origRotation = spawnTransform.rotation;
+    }
+
+    public void RespawnObject()
+    {
+            transform.position = origPosition;
+            transform.rotation = origRotation;
+            if (TryGetComponent<Rigidbody>(out var body))
+                body.velocity = Vector3.zero;
+    } 
     
     void FixedUpdate()
     {
         //if the object falls below the platform, reset the position, rotation and if it has a rigidbody also it's velocity
         if (transform.position.y < lowerWorldLimit)
         {
-            transform.position = origPosition;
-            transform.rotation = origRotation;
-            if (TryGetComponent<Rigidbody>(out var body))
-                body.velocity = Vector3.zero;
+            RespawnObject();
         }
     }
 }
