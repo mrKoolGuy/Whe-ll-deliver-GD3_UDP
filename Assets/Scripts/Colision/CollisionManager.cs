@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Colision;
 using UnityEngine;
 
 public class CollisionManager : MonoBehaviour
 {
     [SerializeField]
-    public List<bycolision> actionlist;
+    public List<CollisionBehaviour> actionlist;
 
     private GameObject gobj;
     void Start()
@@ -19,7 +20,7 @@ public class CollisionManager : MonoBehaviour
         Collider otherCollider = collision.collider; ;
         if (!otherCollider.CompareTag("Untagged"))
         {
-            foreach (bycolision action in actionlist)
+            foreach (CollisionBehaviour action in actionlist)
             {
                 if (action.check(otherCollider)){
                     action.doaction(gobj, otherCollider); break;

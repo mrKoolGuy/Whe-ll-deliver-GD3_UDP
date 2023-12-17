@@ -33,11 +33,6 @@ namespace GD.Selection
         [SerializeField]
         Outline.Mode OutlineMode = Outline.Mode.OutlineAll;
 
-        [SerializeField]
-        private AudioClip pickupAudioClip;
-        [SerializeField]
-        private AudioClip setDownAudioClip;
-
         //Empty Game Event to handle OnPlayerGrabbed
         [SerializeField] EmptyGameEvent onGrabbed;
 
@@ -94,13 +89,11 @@ namespace GD.Selection
         {
             Rigidbody pushableBody = transform.GetComponent<Rigidbody>();
             
-            //Gets the underlying physics representation of the player (the capsule)
-            //TODO: do it more modular, but setting a SerializeField for a property doesn't work
-            //      because this is a scriptable object, which can not contain reverences to in game objects 
             GameObject playerObject = SearchableObjects.FindObject(playerKey);
             Rigidbody playerBody = playerObject.GetComponent<Rigidbody>();
             Outline outline = transform.GetComponent<Outline>();
             selectstatus status = transform.GetComponent<selectstatus>();
+            PushableObjectSounds sounds = transform.GetComponent<PushableObjectSounds>();
 
             //pressing the configured grab button toggles if a object is grabbable and pushable
             if (Input.GetButtonDown("Grab"))
@@ -121,7 +114,7 @@ namespace GD.Selection
                         renderer.material = onPickupMaterial;
                     if(outline is not null)
                         outline.OutlineColor = onPickupColor;
-                    AudioSource.PlayClipAtPoint(pickupAudioClip, transform.position);
+                    sounds.OnPickup();
                     if (status is not null)
                     {
                         status.startus = 2;
@@ -137,7 +130,7 @@ namespace GD.Selection
                         renderer.material = onSelectMaterial;
                     if (outline is not null)
                         outline.OutlineColor = onSelectColor;
-                    AudioSource.PlayClipAtPoint(setDownAudioClip, transform.position);
+                    sounds.OnSetDown();
                     if (status is not null)
                     {
                         status.startus = 1;
@@ -163,7 +156,8 @@ namespace GD.Selection
 
         public void OnDeselect(Transform transform)
         {
-            
+            PushableObjectSounds sounds = transform.GetComponent<PushableObjectSounds>();
+
             if (transform.TryGetComponent(out Rigidbody body))
             {
                 if (grabbing)
@@ -173,8 +167,8 @@ namespace GD.Selection
                     body.mass = originalMass;
                     //This freezes position in x and z but still allows the pushable object to fall down through gravity
                     body.constraints |= RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
-                    
-                    AudioSource.PlayClipAtPoint(setDownAudioClip, transform.position);
+
+                    sounds.OnSetDown();
                 }
                 
                 //change back to original Material

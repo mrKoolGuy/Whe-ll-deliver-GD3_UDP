@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8022500112609604153}
   - component: {fileID: 5005278311004229548}
   - component: {fileID: 1454549060776086697}
+  - component: {fileID: 3033183248749593663}
   m_Layer: 0
   m_Name: Ramp
   m_TagString: Selectable
@@ -357,3 +358,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6737930479e156279a1524d76517aa17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3033183248749593663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2882150028372925859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76074e8c7655ca7cc84e1a877612911b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupAudioBehaviour: {fileID: 11400000, guid: c98a963e37fb66b11aefb5413dc39276, type: 2}
+  setDownAudioBehaviour: {fileID: 11400000, guid: 5a5004227cdb3e865b1abd46cc443195, type: 2}

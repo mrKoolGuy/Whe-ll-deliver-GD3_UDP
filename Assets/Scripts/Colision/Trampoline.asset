@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Trampoline
   m_EditorClassIdentifier: 
   tag: JumpPad
-  sound: {fileID: 0}
+  sounds:
+  - {fileID: 8300000, guid: 2f0840ebac32d2d23a1246ec6651eb52, type: 3}
+  - {fileID: 8300000, guid: c06928fa1ccfc3e2cb26e041a8b35d79, type: 3}
+  - {fileID: 8300000, guid: a8dec5c2436cf45e3a141328443360cb, type: 3}
+  - {fileID: 8300000, guid: 3f9adf77e5fb81ce7a5ce24e5b65f396, type: 3}
   jumpDirection: {x: 0, y: 1, z: 0}
   jumpForce: 65
