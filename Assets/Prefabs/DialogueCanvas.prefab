@@ -303,8 +303,8 @@ MonoBehaviour:
   dialogueLines: []
   textSpeed: 0.1
   headShot: {fileID: 3135989073696292136}
-  boss: {fileID: 21300000, guid: 5a5f9b3bba51c1a499219134db365fdc, type: 3}
-  postman: {fileID: 21300000, guid: 04c55072b3c4376449b990a20cd48231, type: 3}
+  boss: {fileID: 21300000, guid: b0efe8df927e96842841b047c7d2d7b7, type: 3}
+  postman: {fileID: 21300000, guid: b1b4ee2b31e72d049a8508f8ad838215, type: 3}
 --- !u!1 &5212373155582006938
 GameObject:
   m_ObjectHideFlags: 0
