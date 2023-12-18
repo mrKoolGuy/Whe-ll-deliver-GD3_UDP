@@ -6,81 +6,102 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
+    path: Assets/Whe-ll-deliver/My Assets/Scenes/Completed/UI/Main Menu.unity
     guid: 8f321545729451a45b87cf261a11a7cd
   - enabled: 1
-    path: Assets/Scenes/MechanicsPlayground.unity
+    path: Assets/Whe-ll-deliver/My Assets/Scenes/Experiments/MechanicsPlayground.unity
     guid: 318f633d190a04075861035446405b91
   - enabled: 1
-    path: Assets/Levels/Level 2 - First Delivery/Level 2 - Scene.unity
+    path: Assets/Whe-ll-deliver/My Assets/Scenes/InProgress/Level 2 - Scene.unity
     guid: 476373624ba488b498311d653eed3322
   - enabled: 1
-    path: Assets/Levels/Level 3 - Reaching Heights/Level 3 - Scene.unity
+    path: Assets/Whe-ll-deliver/My Assets/Scenes/InProgress/Level 3 - Scene.unity
     guid: 47921e74ec16370499b1501b59adc044
   - enabled: 1
-    path: Assets/Scenes/BootLoader.unity
+    path: Assets/Whe-ll-deliver/My Assets/Scenes/Completed/MainScene.unity
     guid: 61453a276c138104a9d6078b3d82e8a9
   - enabled: 1
-    path: Assets/Levels/Level 1 - Tutorial/Level 1 - Scene - Decoration.unity
+    path: Assets/Whe-ll-deliver/My Assets/Scenes/Completed/Levels/Level 1 - Tutorial/Level
+      1 - Scene - Decoration.unity
     guid: d00b21294b6b9654e98cd6ea2169843f
   - enabled: 1
-    path: Assets/Levels/Level 1 - Tutorial/Level 1 - Scene - Ground.unity
+    path: Assets/Whe-ll-deliver/My Assets/Scenes/Completed/Levels/Level 1 - Tutorial/Level
+      1 - Scene - Ground.unity
     guid: 55975294f2538fb48b1473bef4276c38
   - enabled: 1
-    path: Assets/Levels/Level 1 - Tutorial/Level 1 - Scene - Interactable.unity
+    path: Assets/Whe-ll-deliver/My Assets/Scenes/Completed/Levels/Level 1 - Tutorial/Level
+      1 - Scene - Interactable.unity
     guid: 731c2fe8ed3d145499813a5ca63d2c26
   - enabled: 1
-    path: Assets/Levels/Level 1 - Tutorial/Level 1 - Scene - Light.unity
+    path: Assets/Whe-ll-deliver/My Assets/Scenes/Completed/Levels/Level 1 - Tutorial/Level
+      1 - Scene - Light.unity
     guid: 364f74c68e714a3438644752570d9c84
   - enabled: 1
-    path: Assets/Levels/Level 2 - First Delivery/Level 2 - Scene - Decoration.unity
+    path: Assets/Whe-ll-deliver/My Assets/Scenes/Completed/Levels/Level 2 - First
+      Delivery/Level 2 - Scene - Decoration.unity
     guid: c61d371c98745e3438841626636e254a
   - enabled: 1
-    path: Assets/Levels/Level 2 - First Delivery/Level 2 - Scene - Ground.unity
+    path: Assets/Whe-ll-deliver/My Assets/Scenes/Completed/Levels/Level 2 - First
+      Delivery/Level 2 - Scene - Ground.unity
     guid: 6f3cee03352582048b569cecd9ad05d3
   - enabled: 1
-    path: Assets/Levels/Level 2 - First Delivery/Level 2 - Scene - Interactable.unity
+    path: Assets/Whe-ll-deliver/My Assets/Scenes/Completed/Levels/Level 2 - First
+      Delivery/Level 2 - Scene - Interactable.unity
     guid: d325ab85ff8225f4baf81446ea3c9286
   - enabled: 1
-    path: Assets/Levels/Level 2 - First Delivery/Level 2 - Scene - Light.unity
+    path: Assets/Whe-ll-deliver/My Assets/Scenes/Completed/Levels/Level 2 - First
+      Delivery/Level 2 - Scene - Light.unity
     guid: c5006325b2bd1464599c637c0fc3c9a7
   - enabled: 1
-    path: Assets/Levels/Level 3 - Reaching Heights/Level 3 - Scene - Decoration.unity
+    path: Assets/Whe-ll-deliver/My Assets/Scenes/Completed/Levels/Level 3 - Reaching
+      Heights/Level 3 - Scene - Decoration.unity
     guid: 3cd674dcca9d967468c91e3d3f55e886
   - enabled: 1
-    path: Assets/Levels/Level 3 - Reaching Heights/Level 3 - Scene - Ground.unity
+    path: Assets/Whe-ll-deliver/My Assets/Scenes/Completed/Levels/Level 3 - Reaching
+      Heights/Level 3 - Scene - Ground.unity
     guid: ee46d2065f8246e458dc8fe844a40d06
   - enabled: 1
-    path: Assets/Levels/Level 3 - Reaching Heights/Level 3 - Scene - Interactable.unity
+    path: Assets/Whe-ll-deliver/My Assets/Scenes/Completed/Levels/Level 3 - Reaching
+      Heights/Level 3 - Scene - Interactable.unity
     guid: 5eccd5fa13e4d8144a7b500c07c93735
   - enabled: 1
-    path: Assets/Levels/Level 3 - Reaching Heights/Level 3 - Scene - Light.unity
+    path: Assets/Whe-ll-deliver/My Assets/Scenes/Completed/Levels/Level 3 - Reaching
+      Heights/Level 3 - Scene - Light.unity
     guid: c2e33d7f68561cb46bc43c6d8a0ab489
   - enabled: 1
-    path: Assets/Levels/Level 4 - You, again.._/Level 4 - Scene - Decoration.unity
+    path: Assets/Whe-ll-deliver/My Assets/Scenes/Completed/Levels/Level 4 - You,
+      again.._/Level 4 - Scene - Decoration.unity
     guid: 0cc697307a2891d4aa5701d131927e21
   - enabled: 1
-    path: Assets/Levels/Level 4 - You, again.._/Level 4 - Scene - Ground.unity
+    path: Assets/Whe-ll-deliver/My Assets/Scenes/Completed/Levels/Level 4 - You,
+      again.._/Level 4 - Scene - Ground.unity
     guid: 863b2ce6f9811b34aaadd3b80a6d8384
   - enabled: 1
-    path: Assets/Levels/Level 4 - You, again.._/Level 4 - Scene - Interactable.unity
+    path: Assets/Whe-ll-deliver/My Assets/Scenes/Completed/Levels/Level 4 - You,
+      again.._/Level 4 - Scene - Interactable.unity
     guid: a6ceee09bde89d0489ece0603cc8c310
   - enabled: 1
-    path: Assets/Levels/Level 4 - You, again.._/Level 4 - Scene - Light.unity
+    path: Assets/Whe-ll-deliver/My Assets/Scenes/Completed/Levels/Level 4 - You,
+      again.._/Level 4 - Scene - Light.unity
     guid: 8c5703cc18b2e024793f2d7e79c7f164
   - enabled: 1
-    path: Assets/Levels/Level 1 - Tutorial/Level 1 - Scene - Dialogue.unity
+    path: Assets/Whe-ll-deliver/My Assets/Scenes/Completed/Levels/Level 1 - Tutorial/Level
+      1 - Scene - Dialogue.unity
     guid: f85e2efa7a0f88546be302f5fff00479
   - enabled: 1
-    path: Assets/Levels/Level 2 - First Delivery/Level 2 - Scene - Dialogue.unity
+    path: Assets/Whe-ll-deliver/My Assets/Scenes/Completed/Levels/Level 2 - First
+      Delivery/Level 2 - Scene - Dialogue.unity
     guid: ea11995eea4aec14e9f23ce02fff8938
   - enabled: 1
-    path: Assets/Levels/Level 3 - Reaching Heights/Level 3 - Scene - Dialogue.unity
+    path: Assets/Whe-ll-deliver/My Assets/Scenes/Completed/Levels/Level 3 - Reaching
+      Heights/Level 3 - Scene - Dialogue.unity
     guid: 3c4613100ca5c564fa6274012284ed1e
   - enabled: 1
-    path: Assets/Levels/Level 4 - You, again.._/Level 4 - Scene - Dialogue.unity
+    path: Assets/Whe-ll-deliver/My Assets/Scenes/Completed/Levels/Level 4 - You,
+      again.._/Level 4 - Scene - Dialogue.unity
     guid: acd9952193d709b4baa1677d329b0064
   - enabled: 1
-    path: Assets/Levels/Level 5 - The End/Level 5 - Scene - Light.unity
+    path: Assets/Whe-ll-deliver/My Assets/Scenes/Completed/Levels/Level 5 - The End/Level
+      5 - Scene - Light.unity
     guid: dc89e15854d035f44b02f2930527c59c
   m_configObjects: {}
