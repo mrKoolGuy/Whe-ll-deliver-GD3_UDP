@@ -35,6 +35,9 @@ Because we have a lot more than 2 minutes of gameplay we included shortcuts to t
 - pigeons flapping wing: https://freesound.org/people/tigersound/sounds/9329/
 - bushhit: https://pixabay.com/de/sound-effects/bushhitwav-14661/
 - lantern sound effects are based on this sound: https://pixabay.com/de/sound-effects/place-glass-object-81857/
+- PL 6: https://freesound.org/people/newlocknew/sounds/715789/
+- PL 7: https://freesound.org/people/tommy_mooney/sounds/386712/
+- PL 8: https://freesound.org/people/SpliceSound/sounds/218301/
 
 ### Texture Assets:
 - 2D Casual UI HD is in the Menu UIs https://assetstore.unity.com/packages/2d/gui/icons/2d-casual-ui-hd-82080
