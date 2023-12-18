@@ -53,18 +53,18 @@ public class Movement_Audio : MonoBehaviour
         if (Mathf.Approximately(Input.GetAxis("Vertical"), 0))
         {
             rbody.AddForce(transform.TransformDirection(breakingForce * forwardSpeed * Vector3.back));
-            PlayTerrainSound();
+            PlayMaterialSound();
         }
     }
 
-    // Play the sound effect based on the terrain tag
-    private void PlayTerrainSound()
+    // Play the sound effect based on the material the player is moving on 
+    private void PlayMaterialSound()
     {
-        string terrainTag = GetTerrainTag(); // Implement this function to get the terrain tag
+        string MaterialTag = GetMaterialTag(); 
 
-        if (terrainTag != null)
+        if (MaterialTag != null)
         {
-            switch (terrainTag)
+            switch (MaterialTag)
             {
                 case "Grass":
                     PlaySound(grassSound);
@@ -75,7 +75,7 @@ public class Movement_Audio : MonoBehaviour
                 case "Dirt":
                     PlaySound(dirtSound);
                     break;
-                    // Add more cases for other terrains as needed
+                    
             }
         }
     }
@@ -89,26 +89,33 @@ public class Movement_Audio : MonoBehaviour
         }
     }
 
-    private string GetTerrainTag()
-    {
-        // Implement this function to get the terrain tag based on the player's position
-        // You might use raycasting, collision detection, or other methods
-        // For simplicity, let's assume you have a function that returns the terrain tag
-        // based on the player's position.
+    private string GetMaterialTag() // Based on collision detection
+       {
+        Collider collider = null;
 
-        // Example:
+        // Check if there's a collision below the player
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, 1.0f))
         {
-            if (hit.collider != null)
-            {
-                return hit.collider.gameObject.tag;
-            }
+            collider = hit.collider;
+        }
+
+        // Check if the collider has a tag
+        if (collider != null && collider.gameObject.CompareTag("Grass"))
+        {
+            return "Grass";
+        }
+        else if (collider != null && collider.gameObject.CompareTag("Stone"))
+        {
+            return "Stone";
+        }
+        else if (collider != null && collider.gameObject.CompareTag("Dirt"))
+        {
+            return "Dirt";
         }
 
         return null;
     }
-
     private void FixedUpdate()
     {
         // get vertical user input and apply a force to create back and forth movement

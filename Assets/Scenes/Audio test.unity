@@ -313,6 +313,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7230004498888904527, guid: 326066ed887294aa59f4dc4909c93bd9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1826716435}
+    - targetCorrespondingSourceObject: {fileID: 7230004498888904527, guid: 326066ed887294aa59f4dc4909c93bd9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1826716452}
   m_SourcePrefab: {fileID: 100100000, guid: 326066ed887294aa59f4dc4909c93bd9, type: 3}
 --- !u!1001 &714073193
 PrefabInstance:
@@ -812,7 +815,21 @@ MonoBehaviour:
   breakingForce: 100
   grassSound: {fileID: 8300000, guid: 238d8885ddb902c4f9a2f182396d5c13, type: 3}
   stoneSound: {fileID: 8300000, guid: cf8f41cf3d2cf39498fe204d4d8a9b4e, type: 3}
-  dirtSound: {fileID: 8300000, guid: a986e332b45bc7642a3dd681b9343f90, type: 3}
+  dirtSound: {fileID: 8300000, guid: 357148ee6dfca424fb322965987c47f0, type: 3}
+--- !u!114 &1826716452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826716418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a02817d2b20a5c048b5265aa943194df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementTurnSound: {fileID: 0}
+  movementThreshold: 0.1
 --- !u!1 &1864649452 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: 4ef3acad2993f144eb8f26b9eaf49be5, type: 3}
