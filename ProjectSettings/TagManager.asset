@@ -10,6 +10,9 @@ TagManager:
   - GroundTrigger
   - JumpPad
   - StreetLamp
+  - Stone
+  - Dirt
+  - Grass
   layers:
   - Default
   - TransparentFX
