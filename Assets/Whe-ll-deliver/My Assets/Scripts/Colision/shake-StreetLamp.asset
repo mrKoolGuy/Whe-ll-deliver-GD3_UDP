@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fc30e455e3ce884680d44bdb2ff5272, type: 3}
   m_Name: shake-StreetLamp
   m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: bd237c334f02748089f011eb4969e84a, type: 3}
+  - {fileID: 8300000, guid: 19b0a401ce996d0c48edc5fd06d35e7c, type: 3}
   tag: StreetLamp

@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d91b27e12aa41ca805c6fdd3ae40674, type: 3}
-  m_Name: TrampolineSetDownAudioBehaviour
+  m_Script: {fileID: 11500000, guid: cea8b3e1cdfe1fdf9b11fad4f089f521, type: 3}
+  m_Name: VolumeController
   m_EditorClassIdentifier: 
-  sounds:
-  - {fileID: 8300000, guid: e9c35bd4173e7a9ba81130b727d3721d, type: 3}

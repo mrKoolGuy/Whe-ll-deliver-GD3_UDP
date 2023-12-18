@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: TrampolinePickupAudioBehaviour
   m_EditorClassIdentifier: 
   sounds:
-  - {fileID: 8300000, guid: 5df1ef81f02544a34b3335c59fd0b380, type: 3}
+  - {fileID: 8300000, guid: 84d1854f1541906a38a4facc4de4b4c6, type: 3}
+  - {fileID: 8300000, guid: c2ccaf7544b311cb78ce756ba301e929, type: 3}

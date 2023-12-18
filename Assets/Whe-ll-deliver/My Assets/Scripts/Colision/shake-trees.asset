@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fc30e455e3ce884680d44bdb2ff5272, type: 3}
   m_Name: shake-trees
   m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: b24ff97352241d59aa283aea563aa658, type: 3}
   tag: Tree

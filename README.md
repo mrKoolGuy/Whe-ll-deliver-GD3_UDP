@@ -5,6 +5,14 @@ Assets/Whe-ll-deliver/My Assets/Scenes/Completed/MainScene.unity
 (or use the search)
 Enter the Scene. You will see a Main Menu. With new game, You can start the game from the beginning. If you press on selected level, you can cheat and skip levels Completely. 
 
+Cheat Keys:
+G to Goal
+H back to start
+1 First Step 
+2 Second Step
+3 Third Step
+4 Fourth Step
+0 Level Interactables rest
 
 3rd party:
 We use 3rd party elements.
