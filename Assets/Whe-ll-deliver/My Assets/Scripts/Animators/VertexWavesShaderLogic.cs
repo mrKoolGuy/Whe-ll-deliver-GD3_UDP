@@ -27,6 +27,8 @@ public class VertexWavesShaderLogic : MonoBehaviour
         render = GetComponent<Renderer>();
         Vector3 r = transform.eulerAngles;
         render.material.SetVector("_Rotation", new Vector4(-r.x,-r.y,-r.z,0));
+        Vector3 p = transform.position;
+        render.material.SetVector("_Position", new Vector4(-p.x, -p.y, -p.z, 0));
     }
 
     [Button]
