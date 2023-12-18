@@ -4,7 +4,7 @@ using UnityEngine;
 using GD;
 using UnityEngine.Serialization;
 
-public class OnGravity: MonoBehaviour
+public class DisableGravityAndScoringDisplay: MonoBehaviour
 {
     [SerializeField]
     SearchableObjectKey playerkey;
