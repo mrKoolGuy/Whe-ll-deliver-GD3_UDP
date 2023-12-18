@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ee4fe97d019d0f40a6f51ad8b3e64f9, type: 3}
   m_Name: UIAudioPlayerButton
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 5df1ef81f02544a34b3335c59fd0b380, type: 3}
+  audioClip: {fileID: 8300000, guid: f24304951e58a19deba7e32d37a0f42b, type: 3}
   mainMenu: {fileID: 11400000, guid: 5e1b109787f20f147bb257435bd3ca82, type: 2}

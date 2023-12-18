@@ -751,7 +751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e5a38ca739d0b2e908bb7676eb33c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  birdsFlapping: {fileID: 8300000, guid: 1157bb51c3e28966799614fbc89949dc, type: 3}
+  birdsFlapping: {fileID: 8300000, guid: 601976001cf6bd5f3aa0b2076cc236b0, type: 3}
 --- !u!114 &7141186920343473040
 MonoBehaviour:
   m_ObjectHideFlags: 0
