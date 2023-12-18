@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerkey: {fileID: 11400000, guid: 4b50b2cea39dfac12bd6942eb6f3dbe1, type: 2}
-  Scoringkey: {fileID: 11400000, guid: ad30cf8b29c52791a86e6592fa176bca, type: 2}
+  ScoringHUDKey: {fileID: 11400000, guid: 242d0ebd92304dab9b79b2d3203a3002, type: 2}
 --- !u!4 &532013537
 Transform:
   m_ObjectHideFlags: 0

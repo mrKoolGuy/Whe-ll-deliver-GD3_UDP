@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GD;
+using UnityEngine.Serialization;
 
 public class OnGravity: MonoBehaviour
 {
     [SerializeField]
     SearchableObjectKey playerkey;
-    [SerializeField]
-    SearchableObjectKey Scoringkey;
+    [FormerlySerializedAs("ScoringHUDkey")] [FormerlySerializedAs("Scoringkey")] [SerializeField]
+    SearchableObjectKey ScoringHUDKey;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,7 @@ public class OnGravity: MonoBehaviour
         // Blog remainig motion in Y 
         playerRB.constraints |= RigidbodyConstraints.FreezePositionY;
         
-        SearchableObjects.FindObject(Scoringkey).SetActive(false);
+        SearchableObjects.FindObject(ScoringHUDKey).SetActive(false);
         GameLayout.ResumeTime();
     }
 
@@ -25,9 +26,8 @@ public class OnGravity: MonoBehaviour
     void OnDestroy()
     {
         Rigidbody playerRB = SearchableObjects.FindObject(playerkey).GetComponent<Rigidbody>();
-        playerRB.useGravity = false;
+        playerRB.useGravity = true;
         // undo Blog remainig motion in Y  
         playerRB.constraints &= ~RigidbodyConstraints.FreezePositionY;
-        SearchableObjects.FindObject(Scoringkey).SetActive(true);
     }
 }
