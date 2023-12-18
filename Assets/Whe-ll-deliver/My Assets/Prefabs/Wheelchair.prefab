@@ -1282,6 +1282,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4023932166229145389, guid: ad9f880e782b25c44aadf1eee6062dbd, type: 3}
+      propertyPath: radius
+      value: 0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023932166229145389, guid: ad9f880e782b25c44aadf1eee6062dbd, type: 3}
       propertyPath: layerMask.m_Bits
       value: 5047
       objectReference: {fileID: 0}
